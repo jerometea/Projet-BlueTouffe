@@ -1,9 +1,40 @@
 fileFormatVersion: 2
-guid: 2a7f3592c4137bb4fb744a6740ec4511
-timeCreated: 1462368576
+guid: 2f6c7057b87418f49bc947a22ba69b4b
+timeCreated: 1462971497
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: econU_buildings_2_0
+    21300002: econU_buildings_2_1
+    21300004: econU_buildings_2_2
+    21300006: econU_buildings_2_3
+    21300008: econU_buildings_2_4
+    21300010: econU_buildings_2_5
+    21300012: econU_buildings_2_6
+    21300014: econU_buildings_2_7
+    21300016: econU_buildings_2_8
+    21300018: econU_buildings_2_9
+    21300020: econU_buildings_2_10
+    21300022: econU_buildings_2_11
+    21300024: econU_buildings_2_12
+    21300026: econU_buildings_2_13
+    21300028: econU_buildings_2_14
+    21300030: econU_buildings_2_15
+    21300032: econU_buildings_2_16
+    21300034: econU_buildings_2_17
+    21300036: econU_buildings_2_18
+    21300038: econU_buildings_2_19
+    21300040: econU_buildings_2_20
+    21300042: econU_buildings_2_21
+    21300044: econU_buildings_2_22
+    21300046: econU_buildings_2_23
+    21300048: econU_buildings_2_24
+    21300050: econU_buildings_2_25
+    21300052: econU_buildings_2_26
+    21300054: econU_buildings_2_27
+    21300056: econU_buildings_2_28
+    21300058: econU_buildings_2_29
+    21300060: econU_buildings_2_30
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,7 +60,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -38,7 +69,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +80,755 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: econU_buildings_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1160
+        width: 256
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -128, y: -3}
+        - {x: -128, y: -10}
+        - {x: -15, y: -71}
+        - {x: 8, y: -71}
+        - {x: 128, y: -20}
+        - {x: 128, y: -4}
+        - {x: 69, y: 47}
+        - {x: 3, y: 71}
+        - {x: -60, y: 71}
+        - {x: -77, y: 63}
+    - name: econU_buildings_2_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1132
+        width: 256
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 77.5}
+        - {x: -18, y: 77.5}
+        - {x: -23, y: 76.5}
+        - {x: -109, y: 32.5}
+        - {x: -128, y: 8.5}
+        - {x: -128, y: -16.5}
+        - {x: -16, y: -77.5}
+        - {x: 6, y: -77.5}
+        - {x: 128, y: -16.5}
+        - {x: 128, y: -10.5}
+        - {x: 78, y: 38.5}
+    - name: econU_buildings_2_2
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 1132
+        width: 256
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 74}
+        - {x: -4, y: 74}
+        - {x: -128, y: 2}
+        - {x: -128, y: -13}
+        - {x: -15, y: -74}
+        - {x: 6, y: -74}
+        - {x: 128, y: -17}
+        - {x: 128, y: -6}
+        - {x: 88, y: 42}
+    - name: econU_buildings_2_3
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1133
+        width: 256
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 69}
+        - {x: -100, y: 30}
+        - {x: -100, y: 21}
+        - {x: -128, y: -2}
+        - {x: -128, y: -8}
+        - {x: -6, y: -69}
+        - {x: 7, y: -69}
+        - {x: 128, y: -24}
+        - {x: 128, y: -1}
+        - {x: 56, y: 69}
+    - name: econU_buildings_2_4
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1133
+        width: 256
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 70}
+        - {x: -51, y: 70}
+        - {x: -111, y: 57}
+        - {x: -128, y: 5}
+        - {x: -128, y: -14}
+        - {x: -16, y: -70}
+        - {x: 6, y: -70}
+        - {x: 128, y: -13}
+        - {x: 128, y: -2}
+        - {x: 101, y: 45}
+    - name: econU_buildings_2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 256
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 71}
+        - {x: -61, y: 71}
+        - {x: -70, y: 67}
+        - {x: -128, y: 10}
+        - {x: -128, y: -15}
+        - {x: -6, y: -71}
+        - {x: 15, y: -71}
+        - {x: 128, y: -10}
+        - {x: 128, y: -4}
+        - {x: 66, y: 43}
+    - name: econU_buildings_2_6
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 908
+        width: 256
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 98.5}
+        - {x: -20, y: 98.5}
+        - {x: -72, y: 72.5}
+        - {x: -128, y: -15.5}
+        - {x: -128, y: -42.5}
+        - {x: -6, y: -98.5}
+        - {x: 15, y: -98.5}
+        - {x: 128, y: -37.5}
+        - {x: 128, y: -31.5}
+        - {x: 79, y: 24.5}
+    - name: econU_buildings_2_7
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 972
+        width: 256
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 74}
+        - {x: -83, y: 64}
+        - {x: -88, y: 62}
+        - {x: -124, y: 44}
+        - {x: -128, y: 3}
+        - {x: -128, y: -14}
+        - {x: -15, y: -74}
+        - {x: 8, y: -74}
+        - {x: 128, y: -24}
+        - {x: 128, y: 2}
+        - {x: 95, y: 50}
+        - {x: 29, y: 74}
+    - name: econU_buildings_2_8
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 941
+        width: 256
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 88.5}
+        - {x: -12, y: 88.5}
+        - {x: -50, y: 77.5}
+        - {x: -128, y: -11.5}
+        - {x: -128, y: -27.5}
+        - {x: -15, y: -88.5}
+        - {x: 6, y: -88.5}
+        - {x: 128, y: -31.5}
+        - {x: 128, y: -19.5}
+        - {x: 42, y: 72.5}
+    - name: econU_buildings_2_9
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 941
+        width: 256
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 85}
+        - {x: -60, y: 75}
+        - {x: -108, y: 40}
+        - {x: -128, y: -12}
+        - {x: -128, y: -29}
+        - {x: -16, y: -85}
+        - {x: 6, y: -85}
+        - {x: 128, y: -28}
+        - {x: 128, y: -12}
+        - {x: 110, y: 41}
+        - {x: 58, y: 64}
+        - {x: -11, y: 85}
+    - name: econU_buildings_2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 256
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 71}
+        - {x: -65, y: 71}
+        - {x: -128, y: -3}
+        - {x: -128, y: -10}
+        - {x: -15, y: -71}
+        - {x: 6, y: -71}
+        - {x: 128, y: -14}
+        - {x: 128, y: -4}
+        - {x: 49, y: 59}
+    - name: econU_buildings_2_11
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 684
+        width: 256
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 74, y: 71.5}
+        - {x: 23, y: 98.5}
+        - {x: -21, y: 98.5}
+        - {x: -76, y: 75.5}
+        - {x: -106, y: 13.5}
+        - {x: -128, y: -16.5}
+        - {x: -128, y: -42.5}
+        - {x: -6, y: -98.5}
+        - {x: 15, y: -98.5}
+        - {x: 128, y: -37.5}
+        - {x: 128, y: -31.5}
+        - {x: 79, y: -2.5}
+    - name: econU_buildings_2_12
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 780
+        width: 256
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: 57}
+        - {x: 25, y: 87}
+        - {x: -72, y: 87}
+        - {x: -91, y: 80}
+        - {x: -126, y: 32}
+        - {x: -128, y: 13}
+        - {x: -128, y: -30}
+        - {x: -6, y: -87}
+        - {x: 15, y: -87}
+        - {x: 128, y: -26}
+        - {x: 128, y: -19}
+        - {x: 87, y: 55}
+    - name: econU_buildings_2_13
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 461
+        width: 256
+        height: 473
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43, y: 1.5}
+        - {x: 128, y: 78.5}
+        - {x: 128, y: 86.5}
+        - {x: 72, y: 116.5}
+        - {x: 43, y: 218.5}
+        - {x: 13, y: 236.5}
+        - {x: -6, y: 236.5}
+        - {x: -45, y: 219.5}
+        - {x: -46, y: 132.5}
+        - {x: -103, y: 120.5}
+        - {x: -128, y: 87.5}
+        - {x: -128, y: 80.5}
+        - {x: -42, y: 6.5}
+        - {x: -63, y: -127.5}
+        - {x: -104, y: -135.5}
+        - {x: -128, y: -168.5}
+        - {x: -128, y: -175.5}
+        - {x: -6, y: -236.5}
+        - {x: 6, y: -236.5}
+        - {x: 128, y: -175.5}
+        - {x: 128, y: -169.5}
+        - {x: 72, y: -139.5}
+    - name: econU_buildings_2_14
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 717
+        width: 256
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75, y: 21}
+        - {x: 65, y: 19}
+        - {x: 58, y: 12}
+        - {x: 59, y: 9}
+        - {x: 51, y: 5}
+        - {x: 65, y: 19}
+        - {x: 71, y: 22}
+        - {x: 74, y: 47}
+        - {x: -23, y: 100}
+        - {x: -52, y: 100}
+        - {x: -78, y: 88}
+        - {x: -73, y: 62}
+        - {x: -59, y: 39}
+        - {x: -54, y: 32}
+        - {x: -62, y: 38}
+        - {x: -109, y: 25}
+        - {x: -128, y: -27}
+        - {x: -128, y: -43}
+        - {x: -16, y: -100}
+        - {x: 6, y: -100}
+        - {x: 128, y: -43}
+        - {x: 128, y: -32}
+        - {x: 94, y: 18}
+    - name: econU_buildings_2_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 256
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 84.5}
+        - {x: -40, y: 79.5}
+        - {x: -128, y: -17.5}
+        - {x: -128, y: -23.5}
+        - {x: -15, y: -84.5}
+        - {x: 7, y: -84.5}
+        - {x: 128, y: -32.5}
+        - {x: 128, y: -17.5}
+        - {x: 71, y: 34.5}
+        - {x: 41, y: 61.5}
+        - {x: 1, y: 84.5}
+    - name: econU_buildings_2_16
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 428
+        width: 256
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72, y: 53.5}
+        - {x: 26, y: 89.5}
+        - {x: -27, y: 112.5}
+        - {x: -53, y: 112.5}
+        - {x: -65, y: 102.5}
+        - {x: -75, y: 12.5}
+        - {x: -109, y: -2.5}
+        - {x: -128, y: -26.5}
+        - {x: -128, y: -51.5}
+        - {x: -16, y: -112.5}
+        - {x: 6, y: -112.5}
+        - {x: 128, y: -51.5}
+        - {x: 128, y: -45.5}
+        - {x: 78, y: -16.5}
+    - name: econU_buildings_2_17
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 588
+        width: 256
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: 58}
+        - {x: 33, y: 87}
+        - {x: 13, y: 87}
+        - {x: -47, y: 61}
+        - {x: -82, y: 78}
+        - {x: -125, y: 57}
+        - {x: -128, y: 6}
+        - {x: -128, y: -27}
+        - {x: -6, y: -87}
+        - {x: 6, y: -87}
+        - {x: 128, y: -26}
+        - {x: 128, y: -20}
+        - {x: 89, y: 2}
+    - name: econU_buildings_2_18
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 493
+        width: 256
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 76, y: 16}
+        - {x: 66, y: 14}
+        - {x: 59, y: 7}
+        - {x: 60, y: 4}
+        - {x: 53, y: 0}
+        - {x: 60, y: 8}
+        - {x: 66, y: 14}
+        - {x: 72, y: 17}
+        - {x: 72, y: 40}
+        - {x: 55, y: 78}
+        - {x: -10, y: 105}
+        - {x: -35, y: 105}
+        - {x: -73, y: 81}
+        - {x: -73, y: 57}
+        - {x: -53, y: 27}
+        - {x: -61, y: 33}
+        - {x: -108, y: 20}
+        - {x: -128, y: -32}
+        - {x: -128, y: -49}
+        - {x: -16, y: -105}
+        - {x: 6, y: -105}
+        - {x: 128, y: -48}
+        - {x: 128, y: -37}
+        - {x: 94, y: 13}
+    - name: econU_buildings_2_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 256
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43, y: 73.5}
+        - {x: -1, y: 98.5}
+        - {x: -20, y: 98.5}
+        - {x: -35, y: 93.5}
+        - {x: -68, y: 51.5}
+        - {x: -128, y: -30.5}
+        - {x: -128, y: -44.5}
+        - {x: -17, y: -98.5}
+        - {x: 6, y: -98.5}
+        - {x: 128, y: -41.5}
+        - {x: 128, y: -31.5}
+        - {x: 66, y: 15.5}
+    - name: econU_buildings_2_20
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 364
+        width: 256
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: 72}
+        - {x: 25, y: 100}
+        - {x: 14, y: 100}
+        - {x: -48, y: 69}
+        - {x: -50, y: 46}
+        - {x: -82, y: 65}
+        - {x: -126, y: 45}
+        - {x: -128, y: 2}
+        - {x: -128, y: -40}
+        - {x: -6, y: -100}
+        - {x: 6, y: -100}
+        - {x: 128, y: -39}
+        - {x: 128, y: -33}
+        - {x: 89, y: -11}
+    - name: econU_buildings_2_21
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 141
+        width: 256
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43, y: 129.5}
+        - {x: 11, y: 148.5}
+        - {x: -6, y: 148.5}
+        - {x: -42, y: 133.5}
+        - {x: -62, y: -40.5}
+        - {x: -105, y: -46.5}
+        - {x: -128, y: -80.5}
+        - {x: -128, y: -87.5}
+        - {x: -6, y: -148.5}
+        - {x: 6, y: -148.5}
+        - {x: 128, y: -87.5}
+        - {x: 128, y: -81.5}
+        - {x: 72, y: -51.5}
+    - name: econU_buildings_2_22
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 269
+        width: 256
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 76, y: 11}
+        - {x: 66, y: 9}
+        - {x: 59, y: 2}
+        - {x: 60, y: -1}
+        - {x: 53, y: -5}
+        - {x: 60, y: 3}
+        - {x: 66, y: 9}
+        - {x: 72, y: 12}
+        - {x: 83, y: 56}
+        - {x: 24, y: 110}
+        - {x: -38, y: 110}
+        - {x: -71, y: 80}
+        - {x: -75, y: 52}
+        - {x: -53, y: 22}
+        - {x: -61, y: 28}
+        - {x: -108, y: 15}
+        - {x: -128, y: -37}
+        - {x: -128, y: -54}
+        - {x: -16, y: -110}
+        - {x: 6, y: -110}
+        - {x: 128, y: -53}
+        - {x: 128, y: -42}
+        - {x: 94, y: 8}
+    - name: econU_buildings_2_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 223
+        width: 256
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 81, y: 23}
+        - {x: 43, y: 80}
+        - {x: 4, y: 98}
+        - {x: -24, y: 98}
+        - {x: -49, y: 81}
+        - {x: -128, y: -30}
+        - {x: -128, y: -41}
+        - {x: -6, y: -98}
+        - {x: 16, y: -98}
+        - {x: 128, y: -40}
+        - {x: 128, y: -30}
+        - {x: 116, y: -2}
+    - name: econU_buildings_2_24
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 172
+        width: 256
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 70, y: 93}
+        - {x: 1, y: 120}
+        - {x: -24, y: 120}
+        - {x: -62, y: 98}
+        - {x: -64, y: 94}
+        - {x: -75, y: 5}
+        - {x: -109, y: -10}
+        - {x: -128, y: -34}
+        - {x: -128, y: -59}
+        - {x: -16, y: -120}
+        - {x: 6, y: -120}
+        - {x: 128, y: -59}
+        - {x: 128, y: -53}
+        - {x: 79, y: -24}
+    - name: econU_buildings_2_25
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 188
+        width: 256
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 84, y: 43.5}
+        - {x: 68, y: 75.5}
+        - {x: 28, y: 84.5}
+        - {x: -29, y: 84.5}
+        - {x: -128, y: -1.5}
+        - {x: -128, y: -23.5}
+        - {x: -28, y: -84.5}
+        - {x: 15, y: -84.5}
+        - {x: 128, y: -25.5}
+        - {x: 128, y: -10.5}
+        - {x: 95, y: 9.5}
+    - name: econU_buildings_2_26
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 117
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: -29.5}
+        - {x: 24, y: -26.5}
+        - {x: 24, y: -5.5}
+        - {x: 1, y: 29.5}
+        - {x: -19, y: 29.5}
+        - {x: -24, y: 28.5}
+        - {x: -24, y: -29.5}
+      - - {x: 19, y: 12.5}
+        - {x: 19, y: 10.5}
+        - {x: 22, y: 7.5}
+        - {x: 24, y: 7.5}
+        - {x: 24, y: 17.5}
+        - {x: 21, y: 16.5}
+    - name: econU_buildings_2_27
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 119
+        width: 51
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 23.5}
+        - {x: -25.5, y: -4.5}
+        - {x: -19.5, y: -18.5}
+        - {x: -16.5, y: -23.5}
+        - {x: 22.5, y: -23.5}
+        - {x: 25.5, y: -21.5}
+        - {x: 25.5, y: 1.5}
+        - {x: 12.5, y: 23.5}
+      - - {x: -25.5, y: -7.5}
+        - {x: -25.5, y: -15.5}
+        - {x: -23.5, y: -15.5}
+        - {x: -20.5, y: -12.5}
+        - {x: -20.5, y: -10.5}
+        - {x: -23.5, y: -7.5}
+      - - {x: 22.5, y: 13.5}
+        - {x: 24.5, y: 11.5}
+        - {x: 25.5, y: 11.5}
+        - {x: 25.5, y: 19.5}
+        - {x: 22.5, y: 18.5}
+    - name: econU_buildings_2_28
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 120
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 27.5}
+        - {x: -18, y: -24.5}
+        - {x: -17, y: -27.5}
+        - {x: 18, y: -27.5}
+        - {x: 18, y: 27.5}
+      - - {x: -15, y: -18.5}
+        - {x: -15, y: -14.5}
+        - {x: -16, y: -11.5}
+        - {x: -18, y: -11.5}
+        - {x: -18, y: -19.5}
+    - name: econU_buildings_2_29
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 12
+        width: 256
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -113, y: 22.5}
+        - {x: -128, y: -8.5}
+        - {x: -128, y: -15.5}
+        - {x: -15, y: -76.5}
+        - {x: 7, y: -76.5}
+        - {x: 128, y: -21.5}
+        - {x: 128, y: -8.5}
+        - {x: 64, y: 76.5}
+        - {x: -18, y: 76.5}
+        - {x: -77, y: 46.5}
+    - name: econU_buildings_2_30
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 12
+        width: 256
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48, y: 81}
+        - {x: 22, y: 85}
+        - {x: -40, y: 85}
+        - {x: -73, y: 67}
+        - {x: -103, y: 1}
+        - {x: -128, y: -18}
+        - {x: -128, y: -28}
+        - {x: -6, y: -85}
+        - {x: 16, y: -85}
+        - {x: 128, y: -28}
+        - {x: 128, y: -17}
+        - {x: 115, y: 11}
     outline: []
   spritePackingTag: 
   userData: 
