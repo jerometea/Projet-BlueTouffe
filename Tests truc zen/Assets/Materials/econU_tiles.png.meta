@@ -1,0 +1,605 @@
+fileFormatVersion: 2
+guid: 22e48cd138855c3469d84e52f543f124
+timeCreated: 1462368592
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: econU_tiles_0
+    21300002: econU_tiles_1
+    21300004: econU_tiles_2
+    21300006: econU_tiles_3
+    21300008: econU_tiles_4
+    21300010: econU_tiles_5
+    21300012: econU_tiles_6
+    21300014: econU_tiles_7
+    21300016: econU_tiles_8
+    21300018: econU_tiles_9
+    21300020: econU_tiles_10
+    21300022: econU_tiles_11
+    21300024: econU_tiles_12
+    21300026: econU_tiles_13
+    21300028: econU_tiles_14
+    21300030: econU_tiles_15
+    21300032: econU_tiles_16
+    21300034: econU_tiles_17
+    21300036: econU_tiles_18
+    21300038: econU_tiles_19
+    21300040: econU_tiles_20
+    21300042: econU_tiles_21
+    21300044: econU_tiles_22
+    21300046: econU_tiles_23
+    21300048: econU_tiles_24
+    21300050: econU_tiles_25
+    21300052: econU_tiles_26
+    21300054: econU_tiles_27
+    21300056: econU_tiles_28
+    21300058: econU_tiles_29
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: econU_tiles_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 237
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 237
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 236
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 201
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 201
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_5
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 201
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 201
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_7
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 166
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 166
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_9
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 166
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_10
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 166
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_11
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 132
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_12
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 132
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_13
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 132
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 100
+        width: 64
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: econU_tiles_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 100
+        width: 64
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: econU_tiles_16
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 100
+        width: 64
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: econU_tiles_17
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 100
+        width: 64
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: econU_tiles_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 67
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 67
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_20
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 67
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -16}
+        - {x: 15, y: -16}
+        - {x: 32, y: -3}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_21
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 67
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_22
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 34
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_23
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 34
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_24
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 34
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_25
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 34
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_26
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_27
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    - name: econU_tiles_28
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -32, y: 3}
+        - {x: -32, y: -3}
+        - {x: -12, y: -16}
+        - {x: 7, y: -16}
+        - {x: 32, y: -6}
+        - {x: 32, y: 3}
+        - {x: 6, y: 16}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

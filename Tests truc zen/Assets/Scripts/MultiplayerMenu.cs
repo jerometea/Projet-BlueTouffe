@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using LostPolygon.AndroidBluetoothMultiplayer;
+using System;
 
 public class MultiplayerMenu : MonoBehaviour
 {
@@ -32,6 +33,8 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
         AndroidBluetoothMultiplayer.DiscoverabilityEnableFailed += OnBluetoothDiscoverabilityEnableFailed;
         AndroidBluetoothMultiplayer.ConnectedToServer += OnBluetoothConnectedToServer;
         AndroidBluetoothMultiplayer.DisconnectedFromServer += OnBluetoothDisconnectedFromServer;
+        AndroidBluetoothMultiplayer.DevicePicked += OnBluetoothDevicePicked;
+        AndroidBluetoothMultiplayer.ClientConnected += OnBluetoothClientConnected;
     }
 
 
@@ -47,8 +50,9 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
 
     void ChangeText(string text)
     {
-        TextMesh rend = GetComponent<TextMesh>();
-        rend.text = text;
+        var LRapport = GameObject.Find("LRapport");
+        TextMesh rend = LRapport.GetComponent<TextMesh>();
+        rend.text = rend.text + "\n" + text;
     }
 
     void Start()
@@ -92,21 +96,29 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
             {
                 if (AndroidBluetoothMultiplayer.GetIsBluetoothEnabled())
                 {
+                    ChangeText("Bluetooth Enable");
                     AndroidBluetoothMultiplayer.RequestEnableDiscoverability(120);
                     Network.Disconnect(); // Just to be sure
-                    //ChangeText();
-                    AndroidBluetoothMultiplayer.StartServer(kPort);
+                    ChangeText("Start Server :");
+                    try
+                    {
+                        AndroidBluetoothMultiplayer.StartServer(kPort);
+                    }
+                    catch
+                    {
+                        ChangeText("Soucis trouvé PUTAIN DE MERDE");
+                    }
                 }
                 else
                 {
-                    // Otherwise we have to enable Bluetooth first and wait for callback
-                    _desiredMode = BluetoothMultiplayerMode.Server;
-                    AndroidBluetoothMultiplayer.RequestEnableDiscoverability(120);
+                    ChangeText("Bluetooth Disable");
+                    //_desiredMode = BluetoothMultiplayerMode.Server;
+                    //AndroidBluetoothMultiplayer.RequestEnableDiscoverability(120);
                 }
             }
             else
             {
-                rend.text = "MARCHE PO D:";
+                ChangeText("Marche pas :(");
             }
         }
         else if (_isJoin)
@@ -151,16 +163,22 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
     {
         ChangeText("Blue Disconect");
         // Stopping Unity networking on Bluetooth failure
-        Network.Disconnect();
+        //Network.Disconnect();
     }
 
+    private void OnBluetoothDevicePicked(BluetoothDevice device)
+    {
+        ChangeText("Device Selected");
+
+        // Trying to connect to a device user had picked
+        AndroidBluetoothMultiplayer.Connect(device.Address, kPort);
+    }
 
     private void OnBluetoothConnectedToServer(BluetoothDevice device)
     {
-        
-
         // Trying to negotiate a Unity networking connection, 
         // when Bluetooth client connected successfully
+
         Network.Connect(kLocalIp, kPort);
     }
 
@@ -179,19 +197,19 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
         Debug.Log("Event - AdapterEnabled");
 
         // Resuming desired action after enabling the adapter
-        switch (_desiredMode)
-        {
-            case BluetoothMultiplayerMode.Server:
-                Network.Disconnect();
-                AndroidBluetoothMultiplayer.StartServer(kPort);
-                break;
-            case BluetoothMultiplayerMode.Client:
-                Network.Disconnect();
-                AndroidBluetoothMultiplayer.ShowDeviceList();
-                break;
-        }
+        //switch (_desiredMode)
+        //{
+        //    case BluetoothMultiplayerMode.Server:
+        //        Network.Disconnect();
+        //        AndroidBluetoothMultiplayer.StartServer(kPort);
+        //        break;
+        //    case BluetoothMultiplayerMode.Client:
+        //        Network.Disconnect();
+        //        AndroidBluetoothMultiplayer.ShowDeviceList();
+        //        break;
+        //}
 
-        _desiredMode = BluetoothMultiplayerMode.None;
+        //_desiredMode = BluetoothMultiplayerMode.None;
     }
 
     private void OnBluetoothDiscoverabilityEnableFailed()
@@ -202,13 +220,23 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
 
     private void OnBluetoothDiscoverabilityEnabled(int discoverabilityDuration)
     {
-        //ChangeText("Discovery");
+        ChangeText("Discovery");
         Debug.Log(string.Format("Event - DiscoverabilityEnabled: {0} seconds", discoverabilityDuration));
+    }
+
+    private void OnBluetoothClientConnected(BluetoothDevice device)
+    {
+        ChangeText("Client Connected");
     }
 
     #endregion Bluetooth events
     #region Network events
 
+    void OnPlayerConnected(NetworkPlayer player)
+    {
+        ChangeText("Player Connected");
+        Debug.Log("Player connected from " + player.ipAddress + ":" + player.port);
+    }
     private void OnPlayerDisconnected(NetworkPlayer player)
     {
         Debug.Log("Player disconnected: " + player.GetHashCode());
@@ -222,7 +250,7 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
 
         // Stopping all Bluetooth connectivity on Unity networking disconnect event
         ChangeText("Failed");
-        AndroidBluetoothMultiplayer.Stop();
+        //AndroidBluetoothMultiplayer.Stop();
     }
 
     private void OnDisconnectedFromServer()
@@ -230,7 +258,7 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
         Debug.Log("Disconnected from server");
 
         // Stopping all Bluetooth connectivity on Unity networking disconnect event
-        AndroidBluetoothMultiplayer.Stop();
+        //AndroidBluetoothMultiplayer.Stop();
 
     }
 
@@ -238,18 +266,18 @@ private BluetoothMultiplayerMode _desiredMode = BluetoothMultiplayerMode.None;
     {
         Debug.Log("Connected to server");
         ChangeText("Connected");
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
     }
 
     private void OnServerInitialized()
     {
         Debug.Log("Server initialized");
-
+        //ChangeText("Server Initialized");
         // Instantiating a simple test actor
-        if (Network.isServer)
-        {
-            ChangeText("Init");
-        }
+        //if (Network.isServer)
+        //{
+        //    ChangeText("Init");
+        //}
     }
 
     #endregion Network events
