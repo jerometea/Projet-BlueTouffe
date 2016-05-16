@@ -63,6 +63,7 @@
      <Compile Include="Assets\AndroidBluetoothMultiplayer\Source\BluetoothDeviceClass.cs" />
      <Compile Include="Assets\AndroidBluetoothMultiplayer\Source\BluetoothMultiplayerMode.cs" />
      <Compile Include="Assets\AndroidBluetoothMultiplayer\Source\BluetoothNotEnabledException.cs" />
+     <Compile Include="Assets\Char\CharController.cs" />
      <Compile Include="Assets\Zenject\OptionalExtras\CommandsAndSignals\Command\Binders\CommandBinder0.cs" />
      <Compile Include="Assets\Zenject\OptionalExtras\CommandsAndSignals\Command\Binders\CommandBinder1.cs" />
      <Compile Include="Assets\Zenject\OptionalExtras\CommandsAndSignals\Command\Binders\CommandBinder2.cs" />
