@@ -56,12 +56,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -86,6 +80,7 @@
     <Compile Include="Assets\AndroidBluetoothMultiplayer\Source\BluetoothMultiplayerMode.cs" />
     <Compile Include="Assets\AndroidBluetoothMultiplayer\Source\BluetoothNotEnabledException.cs" />
     <Compile Include="Assets\Char\CharController.cs" />
+    <Compile Include="Assets\IsoMovement.cs" />
     <Compile Include="Assets\IsoTools\Examples\Scripts\AlienBallController.cs" />
     <Compile Include="Assets\IsoTools\Examples\Scripts\AlienBallSpawner.cs" />
     <Compile Include="Assets\IsoTools\Examples\Scripts\AlienDestroyer.cs" />

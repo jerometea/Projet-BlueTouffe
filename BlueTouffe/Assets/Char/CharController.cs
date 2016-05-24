@@ -25,20 +25,20 @@ public class CharController : MonoBehaviour {
 
         if( y > 0)
         {
-            transform.Translate( 0, (y * Time.deltaTime) * _cross, 0 );
+            transform.Translate( 0, (12f * y * Time.deltaTime) * _cross, 0 );
         } else if (y < 0)
         {
-            transform.Translate( 0, (y * Time.deltaTime) * _cross, 0 );
+            transform.Translate( 0, (12f * y * Time.deltaTime) * _cross, 0 );
         }
 
         if( x > 0 )
         {
-            transform.Translate( -x * Time.deltaTime, 0, 0 );
+            transform.Translate(12f * -x * Time.deltaTime, 0, 0 );
             transform.eulerAngles = new Vector2( 0, 180 );
         }
         else if( x < 0 )
         {
-            transform.Translate( x * Time.deltaTime, 0, 0 );
+            transform.Translate(12f * x * Time.deltaTime, 0, 0 );
             transform.eulerAngles = new Vector2( 0, 0 );
         }
 
