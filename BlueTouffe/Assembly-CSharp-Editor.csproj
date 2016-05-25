@@ -48,6 +48,13 @@
      <Compile Include="Assets\AndroidBluetoothMultiplayer\Source\Editor\ManifestChecker.cs" />
      <Compile Include="Assets\AndroidBluetoothMultiplayer\Source\Editor\ManifestGenerator.cs" />
      <Compile Include="Assets\AndroidBluetoothMultiplayer\Source\Editor\UuidGenerator.cs" />
+     <Compile Include="Assets\IsoTools\Scripts\Internal\Editor\IsoObjectEditor.cs" />
+     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapAssetEditor.cs" />
+     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapAssetPostprocessor.cs" />
+     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapEditor.cs" />
+     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapLayerEditor.cs" />
+     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapPostprocessor.cs" />
+     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapTilesetEditor.cs" />
      <Compile Include="Assets\Zenject\Source\Editor\EditorWindow\EditorWindowCompositionRoot.cs" />
      <Compile Include="Assets\Zenject\Source\Editor\EditorWindow\EditorWindowFacade.cs" />
      <Compile Include="Assets\Zenject\Source\Editor\EditorWindow\GuiRenderableManager.cs" />
@@ -64,6 +71,7 @@
      <Compile Include="Assets\Zenject\Source\Editor\ZenMenuItems.cs" />
      <Compile Include="Assets\Zenject\Source\Editor\ZenUnityEditorUtil.cs" />
      <None Include="Assets\Zenject\OptionalExtras\SampleGame1 (Beginner)\Media\Imported\Shaders\Particle Alpha Blend_IgnoreFog.shader" />
+     <None Include="Assets\IsoTools\README.txt" />
      <None Include="Assets\AndroidBluetoothMultiplayer\Demos\Assets\Graphics\Particle Alpha Blend.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Zenject\OptionalExtras\SampleGame1 (Beginner)\Media\Fonts\Space.txt" />
@@ -72,6 +80,7 @@
      <None Include="Assets\Zenject\Version.txt" />
      <None Include="Assets\Zenject\OptionalExtras\SampleGame1 (Beginner)\Media\Imported\Shaders\AddSmooth_Layer.shader" />
      <None Include="Assets\Zenject\OptionalExtras\SampleGame1 (Beginner)\Media\Imported\Shaders\Add_Layer.shader" />
+     <None Include="Assets\IsoTools\CHANGELOG.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
