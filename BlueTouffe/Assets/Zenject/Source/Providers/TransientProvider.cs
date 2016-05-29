@@ -1,75 +1,56 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using ModestTree;
-using Zenject;
 
 namespace Zenject
 {
-    public class TransientProvider : IProvider
+    public class TransientProvider : ProviderBase
     {
-        readonly DiContainer _container;
         readonly Type _concreteType;
-        readonly string _concreteIdentifier;
-        readonly List<TypeValuePair> _extraArguments;
 
-        public TransientProvider(
-            Type concreteType, DiContainer container,
-            List<TypeValuePair> extraArguments, string concreteIdentifier)
+        public TransientProvider(Type concreteType, DiContainer container)
         {
-            _container = container;
             _concreteType = concreteType;
-            _concreteIdentifier = concreteIdentifier;
-            _extraArguments = extraArguments;
+
+            var singletonMark = container.SingletonRegistry.TryGetSingletonType(concreteType);
+
+            if (singletonMark.HasValue)
+            {
+                throw new ZenjectBindException(
+                    "Attempted to use 'ToTransient' with the same type ('{0}') that is already marked with '{1}'".Fmt(concreteType.Name(), singletonMark.Value));
+            }
         }
 
-        public TransientProvider(
-            Type concreteType, DiContainer container,
-            List<TypeValuePair> extraArguments)
-            : this(concreteType, container, extraArguments, null)
-        {
-        }
-
-        public TransientProvider(
-            Type concreteType, DiContainer container)
-            : this(concreteType, container, new List<TypeValuePair>())
-        {
-        }
-
-        public Type GetInstanceType(InjectContext context)
+        public override Type GetInstanceType()
         {
             return _concreteType;
         }
 
-        public IEnumerator<List<object>> GetAllInstancesWithInjectSplit(InjectContext context, List<TypeValuePair> args)
+        public override object GetInstance(InjectContext context)
         {
-            Assert.IsNotNull(context);
-
-            bool autoInject = false;
-
-            var injectArgs = new InjectArgs()
-            {
-                TypeInfo = TypeAnalyzer.GetInfo(GetTypeToCreate(context.MemberType)),
-                ExtraArgs = _extraArguments.Concat(args).ToList(),
-                Context = context,
-                ConcreteIdentifier = _concreteIdentifier,
-                UseAllArgs = false,
-            };
-
-            var instance = _container.InstantiateExplicit(
-                autoInject, injectArgs);
-
-            // Return before property/field/method injection to allow circular dependencies
-            yield return new List<object>() { instance };
-
-            injectArgs.UseAllArgs = true;
-
-            _container.InjectExplicit(instance, injectArgs);
+            var obj = context.Container.InstantiateExplicit(
+                GetTypeToInstantiate(context.MemberType), new List<TypeValuePair>(), context, null, true);
+            Assert.That(obj != null);
+            return obj;
         }
 
-        Type GetTypeToCreate(Type contractType)
+        Type GetTypeToInstantiate(Type contractType)
         {
-            return ProviderUtil.GetTypeToInstantiate(contractType, _concreteType);
+            if (_concreteType.IsOpenGenericType())
+            {
+                Assert.That(!contractType.IsAbstract());
+                Assert.That(contractType.GetGenericTypeDefinition() == _concreteType);
+                return contractType;
+            }
+
+            Assert.That(_concreteType.DerivesFromOrEqual(contractType));
+            return _concreteType;
+        }
+
+        public override IEnumerable<ZenjectResolveException> ValidateBinding(InjectContext context)
+        {
+            return context.Container.ValidateObjectGraph(_concreteType, context);
         }
     }
 }

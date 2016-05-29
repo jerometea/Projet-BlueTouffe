@@ -41,21 +41,9 @@ namespace Zenject
         public InjectContext CreateInjectContext(
             DiContainer container, InjectContext currentContext, object targetInstance, string concreteIdentifier)
         {
-            var context = new InjectContext();
-
-            context.MemberType = MemberType;
-            context.Container = container;
-            context.ObjectType = ObjectType;
-            context.ParentContext = currentContext;
-            context.ObjectInstance = targetInstance;
-            context.Identifier = Identifier;
-            context.ConcreteIdentifier = concreteIdentifier;
-            context.MemberName = MemberName;
-            context.Optional = Optional;
-            context.SourceType = SourceType;
-            context.FallBackValue = DefaultValue;
-
-            return context;
+            return new InjectContext(
+                container, MemberType, Identifier, Optional,
+                ObjectType, targetInstance, MemberName, currentContext, concreteIdentifier, DefaultValue, SourceType);
         }
     }
 }

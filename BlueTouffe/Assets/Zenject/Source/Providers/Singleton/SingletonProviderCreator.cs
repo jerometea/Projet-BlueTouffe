@@ -1,97 +1,107 @@
 using System;
 using System.Collections.Generic;
+using ModestTree;
 
-#if !NOT_UNITY3D
+#if !ZEN_NOT_UNITY3D
 using UnityEngine;
 #endif
 
 namespace Zenject
 {
+    // This class is just a facade that delegates requests to other singleton management classes
     public class SingletonProviderCreator
     {
-        readonly StandardSingletonProviderCreator _standardProviderCreator;
-        readonly SubContainerSingletonProviderCreatorByMethod _subContainerMethodProviderCreator;
-        readonly SubContainerSingletonProviderCreatorByInstaller _subContainerInstallerProviderCreator;
+        readonly MethodSingletonProviderCreator _methodSingletonProviderCreator;
+        readonly TypeSingletonProviderCreator _typeSingletonProviderCreator;
+        readonly InstanceSingletonProviderCreator _instanceSingletonProviderCreator;
+        readonly FactorySingletonProviderCreator _factorySingletonProviderCreator;
 
-#if !NOT_UNITY3D
-        readonly SubContainerSingletonProviderCreatorByPrefab _subContainerPrefabProviderCreator;
-        readonly SubContainerSingletonProviderCreatorByPrefabResource _subContainerPrefabResourceProviderCreator;
-
-        readonly PrefabSingletonProviderCreator _prefabProviderCreator;
-        readonly PrefabResourceSingletonProviderCreator _prefabResourceProviderCreator;
+#if !ZEN_NOT_UNITY3D
+        readonly GameObjectSingletonProviderCreator _gameObjectSingletonProviderCreator;
+        readonly PrefabSingletonProviderCreator _prefabSingletonProviderCreator;
+        readonly PrefabResourceSingletonProviderCreator _prefabResourceSingletonProviderCreator;
+        readonly MonoBehaviourSingletonProviderCreator _monoBehaviourSingletonProviderCreator;
 #endif
+
         public SingletonProviderCreator(
-            DiContainer container, SingletonMarkRegistry markRegistry)
+            DiContainer container, SingletonRegistry singletonRegistry)
         {
-            _standardProviderCreator = new StandardSingletonProviderCreator(container, markRegistry);
+            _typeSingletonProviderCreator = new TypeSingletonProviderCreator(container, singletonRegistry);
+            _methodSingletonProviderCreator = new MethodSingletonProviderCreator(singletonRegistry);
+            _instanceSingletonProviderCreator = new InstanceSingletonProviderCreator(container, singletonRegistry);
+            _factorySingletonProviderCreator = new FactorySingletonProviderCreator(container, singletonRegistry);
 
-            _subContainerMethodProviderCreator = new SubContainerSingletonProviderCreatorByMethod(container, markRegistry);
-            _subContainerInstallerProviderCreator = new SubContainerSingletonProviderCreatorByInstaller(container, markRegistry);
-
-#if !NOT_UNITY3D
-            _subContainerPrefabProviderCreator = new SubContainerSingletonProviderCreatorByPrefab(container, markRegistry);
-            _subContainerPrefabResourceProviderCreator = new SubContainerSingletonProviderCreatorByPrefabResource(container, markRegistry);
-
-            _prefabProviderCreator = new PrefabSingletonProviderCreator(container, markRegistry);
-            _prefabResourceProviderCreator = new PrefabResourceSingletonProviderCreator(container, markRegistry);
+#if !ZEN_NOT_UNITY3D
+            _prefabResourceSingletonProviderCreator = new PrefabResourceSingletonProviderCreator(container, singletonRegistry);
+            _prefabSingletonProviderCreator = new PrefabSingletonProviderCreator(container, singletonRegistry);
+            _monoBehaviourSingletonProviderCreator = new MonoBehaviourSingletonProviderCreator(container, singletonRegistry);
+            _gameObjectSingletonProviderCreator = new GameObjectSingletonProviderCreator(container, singletonRegistry);
 #endif
         }
 
-        public IProvider CreateProviderStandard(
-            StandardSingletonDeclaration dec, Func<DiContainer, Type, IProvider> providerCreator)
+        public ProviderBase CreateProviderFromInstance(
+            string concreteIdentifier, Type concreteType, object instance)
         {
-            return _standardProviderCreator.GetOrCreateProvider(dec, providerCreator);
+            return CreateProviderFromInstance(
+                new SingletonId(concreteType, concreteIdentifier), instance);
         }
 
-        public IProvider CreateProviderForSubContainerMethod(
-            Type resultType, string concreteIdentifier,
-            Action<DiContainer> installMethod, string identifier)
+        public ProviderBase CreateProviderFromInstance(
+            SingletonId singleId, object instance)
         {
-            return _subContainerMethodProviderCreator.CreateProvider(
-                resultType, concreteIdentifier, installMethod, identifier);
+            return _instanceSingletonProviderCreator.CreateProvider(singleId, instance);
         }
 
-        public IProvider CreateProviderForSubContainerInstaller(
-            Type resultType, string concreteIdentifier,
-            Type installerType, string identifier)
+        public ProviderBase CreateProviderFromMethod<TConcrete>(
+            string concreteIdentifier, Func<InjectContext, TConcrete> method)
         {
-            return _subContainerInstallerProviderCreator.CreateProvider(
-                resultType, concreteIdentifier, installerType, identifier);
+            return _methodSingletonProviderCreator.CreateProvider<TConcrete>(concreteIdentifier, method);
         }
 
-#if !NOT_UNITY3D
-        public IProvider CreateProviderForPrefab(
-            GameObject prefab, Type resultType, string gameObjectName, string gameObjectGroupName,
-            List<TypeValuePair> extraArguments, string concreteIdentifier)
+        public ProviderBase CreateProviderFromFactory<TContract, TFactory>(string concreteIdentifier)
+            where TFactory : IFactory<TContract>
         {
-            return _prefabProviderCreator.CreateProvider(
-                prefab, resultType, gameObjectName, gameObjectGroupName,
-                extraArguments, concreteIdentifier);
+            var id = new SingletonId(typeof(TContract), concreteIdentifier);
+            return _factorySingletonProviderCreator.CreateProvider<TContract, TFactory>(id);
         }
 
-        public IProvider CreateProviderForPrefabResource(
-            string resourcePath, Type resultType, string gameObjectName, string gameObjectGroupName,
-            List<TypeValuePair> extraArguments, string concreteIdentifier)
+        public ProviderBase CreateProviderFromType(SingletonId singleId)
         {
-            return _prefabResourceProviderCreator.CreateProvider(
-                resourcePath, resultType, gameObjectName, gameObjectGroupName,
-                extraArguments, concreteIdentifier);
+            return _typeSingletonProviderCreator.CreateProvider(singleId);
         }
 
-        public IProvider CreateProviderForSubContainerPrefab(
-            Type resultType, string concreteIdentifier, string gameObjectName, string gameObjectGroupName,
-            GameObject prefab, string identifier)
+        public ProviderBase CreateProviderFromType(string concreteIdentifier, Type concreteType)
         {
-            return _subContainerPrefabProviderCreator.CreateProvider(
-                resultType, concreteIdentifier, prefab, identifier, gameObjectName, gameObjectGroupName);
+            return CreateProviderFromType(
+                new SingletonId(concreteType, concreteIdentifier));
         }
 
-        public IProvider CreateProviderForSubContainerPrefabResource(
-            Type resultType, string concreteIdentifier, string gameObjectName, string gameObjectGroupName,
-            string resourcePath, string identifier)
+#if !ZEN_NOT_UNITY3D
+        public ProviderBase CreateProviderFromMonoBehaviour(
+            string concreteIdentifier, Type concreteType, GameObject gameObject)
         {
-            return _subContainerPrefabResourceProviderCreator.CreateProvider(
-                resultType, concreteIdentifier, resourcePath, identifier, gameObjectName, gameObjectGroupName);
+            return _monoBehaviourSingletonProviderCreator.CreateProvider(
+                concreteIdentifier, concreteType, gameObject);
+        }
+
+        public ProviderBase CreateProviderFromPrefabResource(
+            string concreteIdentifier, Type concreteType, string resourcePath)
+        {
+            return _prefabResourceSingletonProviderCreator.CreateProvider(
+                concreteIdentifier, concreteType, resourcePath);
+        }
+
+        public ProviderBase CreateProviderFromPrefab(
+            string concreteIdentifier, Type concreteType, GameObject prefab)
+        {
+            return _prefabSingletonProviderCreator.CreateProvider(
+                concreteIdentifier, concreteType, prefab);
+        }
+
+        public ProviderBase CreateProviderFromGameObject(
+            Type concreteType, string concreteIdentifier)
+        {
+            return _gameObjectSingletonProviderCreator.CreateProvider(concreteType, concreteIdentifier);
         }
 #endif
     }

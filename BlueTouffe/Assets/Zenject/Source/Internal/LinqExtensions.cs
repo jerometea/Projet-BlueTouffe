@@ -27,20 +27,6 @@ namespace ModestTree
             }
         }
 
-        // Inclusive because it includes the item that meets the predicate
-        public static IEnumerable<TSource> TakeUntilInclusive<TSource>(
-            this IEnumerable<TSource> source, Func<TSource, bool> predicate)
-        {
-            foreach (var item in source)
-            {
-                yield return item;
-                if (predicate(item))
-                {
-                    yield break;
-                }
-            }
-        }
-
         // Return the first item when the list is of length one and otherwise returns default
         public static TSource OnlyOrDefault<TSource>(this IEnumerable<TSource> source)
         {
@@ -51,13 +37,6 @@ namespace ModestTree
 
             var results = source.Take(2).ToArray();
             return results.Length == 1 ? results[0] : default(TSource);
-        }
-
-        // Another name for IEnumerable.Reverse()
-        // This is useful to distinguish betweeh List.Reverse() when dealing with a list
-        public static IEnumerable<T> Reversed<T>(this IEnumerable<T> list)
-        {
-            return list.Reverse();
         }
 
         public static IEnumerable<T> Prepend<T>(this IEnumerable<T> first, IEnumerable<T> second)
@@ -156,11 +135,6 @@ namespace ModestTree
             return enumerable.Take(amount + 1).Count() == amount;
         }
 
-        public static IEnumerable<T> Except<T>(this IEnumerable<T> list, T item)
-        {
-            return list.Except(item.Yield());
-        }
-
         public static T GetSingle<T>(this object[] objectArray, bool required)
         {
             if (required)
@@ -171,6 +145,12 @@ namespace ModestTree
             {
                 return objectArray.Where(x => x is T).Cast<T>().SingleOrDefault();
             }
+        }
+
+        public static IEnumerable<T> OfType<T>(this IEnumerable<T> source, Type type)
+        {
+            Assert.That(type.DerivesFromOrEqual<T>());
+            return source.Where(x => x.GetType() == type);
         }
 
         public static IEnumerable<TSource> DistinctBy<TSource, TKey>(this IEnumerable<TSource> source,
@@ -251,37 +231,6 @@ namespace ModestTree
         {
             // Use object.Equals to support null values
             return list.Where(x => object.Equals(x, value)).Any();
-        }
-
-        // We call it Zipper instead of Zip to avoid naming conflicts with .NET 4
-        public static IEnumerable<T> Zipper<A, B, T>(
-            this IEnumerable<A> seqA, IEnumerable<B> seqB, Func<A, B, T> func)
-        {
-            using (var iteratorA = seqA.GetEnumerator())
-            using (var iteratorB = seqB.GetEnumerator())
-            {
-                while (true)
-                {
-                    bool isDoneA = !iteratorA.MoveNext();
-                    bool isDoneB = !iteratorB.MoveNext();
-
-                    Assert.That(isDoneA == isDoneB,
-                        "Given collections have different length in Zip operator");
-
-                    if (isDoneA || isDoneB)
-                    {
-                        break;
-                    }
-
-                    yield return func(iteratorA.Current, iteratorB.Current);
-                }
-            }
-        }
-
-        public static IEnumerable<ModestTree.Util.Tuple<A, B>> Zipper<A, B>(
-            this IEnumerable<A> seqA, IEnumerable<B> seqB)
-        {
-            return seqA.Zipper<A, B, ModestTree.Util.Tuple<A, B>>(seqB, ModestTree.Util.Tuple.New);
         }
     }
 }

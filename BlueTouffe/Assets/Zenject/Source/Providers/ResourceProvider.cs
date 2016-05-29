@@ -1,50 +1,50 @@
-#if !NOT_UNITY3D
+#if !ZEN_NOT_UNITY3D
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using ModestTree;
 using UnityEngine;
-using Zenject;
 
 namespace Zenject
 {
-    public class ResourceProvider : IProvider
+    public class ResourceProvider : ProviderBase
     {
-        readonly Type _resourceType;
+        readonly Type _concreteType;
         readonly string _resourcePath;
 
-        public ResourceProvider(
-            string resourcePath, Type resourceType)
+        public ResourceProvider(Type concreteType, string resourcePath)
         {
-            _resourceType = resourceType;
+            _concreteType = concreteType;
             _resourcePath = resourcePath;
         }
 
-        public Type GetInstanceType(InjectContext context)
+        public override Type GetInstanceType()
         {
-            return _resourceType;
+            return _concreteType;
         }
 
-        public IEnumerator<List<object>> GetAllInstancesWithInjectSplit(InjectContext context, List<TypeValuePair> args)
+        public override object GetInstance(InjectContext context)
         {
-            Assert.IsEmpty(args);
-
-            Assert.IsNotNull(context);
-
-            var obj = Resources.Load(_resourcePath, _resourceType);
+            var obj = Resources.Load(_resourcePath, _concreteType);
 
             Assert.IsNotNull(obj,
-                "Could not find resource at path '{0}' with type '{1}'", _resourcePath, _resourceType);
+                "Could not find resource at path '{0}' with type '{1}'", _resourcePath, _concreteType);
 
-            yield return new List<object>() { obj };
+            return obj;
+        }
 
-            // Are there any resource types which can be injected?
+        Type GetTypeToInstantiate(Type contractType)
+        {
+            Assert.That(_concreteType.DerivesFromOrEqual(contractType));
+            return _concreteType;
+        }
+
+        public override IEnumerable<ZenjectResolveException> ValidateBinding(InjectContext context)
+        {
+            yield break;
         }
     }
 }
 
 #endif
-
-
-

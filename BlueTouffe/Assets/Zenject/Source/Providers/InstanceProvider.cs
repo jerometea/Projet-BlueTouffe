@@ -2,35 +2,46 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ModestTree;
-using Zenject;
 
 namespace Zenject
 {
-    public class InstanceProvider : IProvider
+    [System.Diagnostics.DebuggerStepThrough]
+    public class InstanceProvider : ProviderBase
     {
         readonly object _instance;
         readonly Type _instanceType;
 
-        public InstanceProvider(
-            Type instanceType, object instance)
+        public InstanceProvider(Type instanceType, object instance, DiContainer container)
         {
-            _instanceType = instanceType;
+            Assert.That(instance == null || instance.GetType().DerivesFromOrEqual(instanceType));
+
             _instance = instance;
+            _instanceType = instanceType;
+
+            var singletonMark = container.SingletonRegistry.TryGetSingletonType(instanceType);
+
+            if (singletonMark.HasValue)
+            {
+                throw new ZenjectBindException(
+                    "Attempted to use 'ToInstance' with the same type ('{0}') that is already marked with '{1}'".Fmt(instanceType.Name(), singletonMark.Value));
+            }
         }
 
-        public Type GetInstanceType(InjectContext context)
+        public override Type GetInstanceType()
         {
             return _instanceType;
         }
 
-        public IEnumerator<List<object>> GetAllInstancesWithInjectSplit(InjectContext context, List<TypeValuePair> args)
+        public override object GetInstance(InjectContext context)
         {
-            Assert.IsEmpty(args);
-            Assert.IsNotNull(context);
+            // _instance == null during validation sometimes
+            Assert.That(_instance == null || _instance.GetType().DerivesFromOrEqual(context.MemberType));
+            return _instance;
+        }
 
-            Assert.That(_instanceType.DerivesFromOrEqual(context.MemberType));
-
-            yield return new List<object>() { _instance };
+        public override IEnumerable<ZenjectResolveException> ValidateBinding(InjectContext context)
+        {
+            return Enumerable.Empty<ZenjectResolveException>();
         }
     }
 }

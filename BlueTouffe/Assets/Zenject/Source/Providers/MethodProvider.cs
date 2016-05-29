@@ -2,43 +2,48 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ModestTree;
-using Zenject;
 
 namespace Zenject
 {
-    public class MethodProvider<TReturn> : IProvider
+    [System.Diagnostics.DebuggerStepThrough]
+    public class MethodProvider<T> : ProviderBase
     {
-        readonly DiContainer _container;
-        readonly Func<InjectContext, TReturn> _method;
+        readonly Func<InjectContext, T> _method;
 
-        public MethodProvider(
-            Func<InjectContext, TReturn> method,
-            DiContainer container)
+        public MethodProvider(Func<InjectContext, T> method, DiContainer container)
         {
-            _container = container;
             _method = method;
+
+            // We can't do this because this is used by ToLookup which is valid in this case
+            //var singletonMark = container.SingletonRegistry.TryGetSingletonType<T>();
+
+            //if (singletonMark.HasValue)
+            //{
+                //throw new ZenjectBindException(
+                    //"Attempted to use 'ToMethod' with the same type ('{0}') that is already marked with '{1}'".Fmt(typeof(T).Name(), singletonMark.Value));
+            //}
         }
 
-        public Type GetInstanceType(InjectContext context)
+        public override Type GetInstanceType()
         {
-            return typeof(TReturn);
+            return typeof(T);
         }
 
-        public IEnumerator<List<object>> GetAllInstancesWithInjectSplit(InjectContext context, List<TypeValuePair> args)
+        public override object GetInstance(InjectContext context)
         {
-            Assert.IsEmpty(args);
-            Assert.IsNotNull(context);
+            Assert.That(typeof(T).DerivesFromOrEqual(context.MemberType));
+            var obj = _method(context);
 
-            Assert.That(typeof(TReturn).DerivesFromOrEqual(context.MemberType));
+            Assert.That(obj != null, () =>
+                "Method provider returned null when looking up type '{0}'. \nObject graph:\n{1}".Fmt(typeof(T).Name(), context.GetObjectGraphString()));
 
-            if (_container.IsValidating)
-            {
-                yield return new List<object>() { new ValidationMarker(typeof(TReturn)) };
-            }
-            else
-            {
-                yield return new List<object>() { _method(context) };
-            }
+            return obj;
+        }
+
+        public override IEnumerable<ZenjectResolveException> ValidateBinding(InjectContext context)
+        {
+            return Enumerable.Empty<ZenjectResolveException>();
         }
     }
 }
+

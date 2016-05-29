@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-#if !NOT_UNITY3D
+#if !ZEN_NOT_UNITY3D
 using UnityEngine;
 #endif
 
@@ -19,7 +19,7 @@ namespace ModestTree
         [Conditional("UNITY_EDITOR")]
         public static void Debug(string message, params object[] args)
         {
-#if NOT_UNITY3D
+#if ZEN_NOT_UNITY3D
             //Console.WriteLine(string.Format(message, args));
 #else
             //UnityEngine.Debug.Log(string.Format(message, args));
@@ -30,7 +30,7 @@ namespace ModestTree
 
         public static void Info(string message, params object[] args)
         {
-#if NOT_UNITY3D
+#if ZEN_NOT_UNITY3D
             Console.WriteLine(string.Format(message, args));
 #else
             UnityEngine.Debug.Log(string.Format(message, args));
@@ -41,7 +41,7 @@ namespace ModestTree
 
         public static void Warn(string message, params object[] args)
         {
-#if NOT_UNITY3D
+#if ZEN_NOT_UNITY3D
             Console.WriteLine(string.Format(message, args));
 #else
             UnityEngine.Debug.LogWarning(string.Format(message, args));
@@ -52,7 +52,7 @@ namespace ModestTree
 
         public static void Trace(string message, params object[] args)
         {
-#if NOT_UNITY3D
+#if ZEN_NOT_UNITY3D
             Console.WriteLine(string.Format(message, args));
 #else
             UnityEngine.Debug.Log(string.Format(message, args));
@@ -63,7 +63,7 @@ namespace ModestTree
 
         public static void ErrorException(Exception e)
         {
-#if NOT_UNITY3D
+#if ZEN_NOT_UNITY3D
             Console.WriteLine(e.ToString());
 #else
             UnityEngine.Debug.LogException(e);
@@ -72,7 +72,7 @@ namespace ModestTree
 
         public static void ErrorException(string message, Exception e)
         {
-#if NOT_UNITY3D
+#if ZEN_NOT_UNITY3D
             Console.WriteLine(message);
 #else
             UnityEngine.Debug.LogError(message);
@@ -82,7 +82,7 @@ namespace ModestTree
 
         public static void Error(string message, params object[] args)
         {
-#if NOT_UNITY3D
+#if ZEN_NOT_UNITY3D
             Console.WriteLine(string.Format(message, args));
 #else
             UnityEngine.Debug.LogError(string.Format(message, args));

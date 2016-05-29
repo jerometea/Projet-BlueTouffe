@@ -21,15 +21,11 @@ namespace Zenject.Commands
             [Inject]
             Signal _signal = null;
 
-            public event Action Event
+            public Signal Signal
             {
-                add
+                get
                 {
-                    _signal.Event += value;
-                }
-                remove
-                {
-                    _signal.Event -= value;
+                    return _signal;
                 }
             }
 
@@ -50,15 +46,11 @@ namespace Zenject.Commands
             [Inject]
             Signal<TParam1> _signal = null;
 
-            public event Action<TParam1> Event
+            public Signal<TParam1> Signal
             {
-                add
+                get
                 {
-                    _signal.Event += value;
-                }
-                remove
-                {
-                    _signal.Event -= value;
+                    return _signal;
                 }
             }
 
@@ -79,15 +71,11 @@ namespace Zenject.Commands
             [Inject]
             Signal<TParam1, TParam2> _signal = null;
 
-            public event Action<TParam1, TParam2> Event
+            public Signal<TParam1, TParam2> Signal
             {
-                add
+                get
                 {
-                    _signal.Event += value;
-                }
-                remove
-                {
-                    _signal.Event -= value;
+                    return _signal;
                 }
             }
 
@@ -108,15 +96,11 @@ namespace Zenject.Commands
             [Inject]
             Signal<TParam1, TParam2, TParam3> _signal = null;
 
-            public event Action<TParam1, TParam2, TParam3> Event
+            public Signal<TParam1, TParam2, TParam3> Signal
             {
-                add
+                get
                 {
-                    _signal.Event += value;
-                }
-                remove
-                {
-                    _signal.Event -= value;
+                    return _signal;
                 }
             }
 
@@ -137,15 +121,11 @@ namespace Zenject.Commands
             [Inject]
             Signal<TParam1, TParam2, TParam3, TParam4> _signal = null;
 
-            public event Action<TParam1, TParam2, TParam3, TParam4> Event
+            public Signal<TParam1, TParam2, TParam3, TParam4> Signal
             {
-                add
+                get
                 {
-                    _signal.Event += value;
-                }
-                remove
-                {
-                    _signal.Event -= value;
+                    return _signal;
                 }
             }
 
@@ -166,15 +146,11 @@ namespace Zenject.Commands
             [Inject]
             Signal<TParam1, TParam2, TParam3, TParam4, TParam5> _signal = null;
 
-            public event ModestTree.Util.Action<TParam1, TParam2, TParam3, TParam4, TParam5> Event
+            public Signal<TParam1, TParam2, TParam3, TParam4, TParam5> Signal
             {
-                add
+                get
                 {
-                    _signal.Event += value;
-                }
-                remove
-                {
-                    _signal.Event -= value;
+                    return _signal;
                 }
             }
 
@@ -195,15 +171,11 @@ namespace Zenject.Commands
             [Inject]
             Signal<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6> _signal = null;
 
-            public event ModestTree.Util.Action<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6> Event
+            public Signal<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6> Signal
             {
-                add
+                get
                 {
-                    _signal.Event += value;
-                }
-                remove
-                {
-                    _signal.Event -= value;
+                    return _signal;
                 }
             }
 
