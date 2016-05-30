@@ -16,10 +16,6 @@ public class BlueTouffeInstaller : MonoInstaller {
 
     void InstallBlueTouffe()
     {
-        Container.Bind<Camera>().ToInstance(_settings.MainCamera);
-
-
-
         Container.Bind<GameObject>("Buildings").ToInstance(_settings.Map.Buildings);
         Container.Bind<GameObject>("FullFloor").ToInstance(_settings.Map.FullFloor);
         Container.Bind<GameObject>("Moutains").ToInstance(_settings.Map.Moutains);
@@ -31,7 +27,6 @@ public class BlueTouffeInstaller : MonoInstaller {
     [Serializable]
     public class Settings
     {
-        public Camera MainCamera;
         public MapSettigns Map;
         public CharacterSettings Character;
 

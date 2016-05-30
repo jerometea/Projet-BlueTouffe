@@ -140,6 +140,7 @@ namespace LostPolygon.AndroidBluetoothMultiplayer.Examples {
             try {
                 AndroidBluetoothMultiplayer.StopDiscovery();
                 AndroidBluetoothMultiplayer.Stop();
+                DestroyGameObjects();
             } catch {
                 // 
             }
@@ -251,15 +252,21 @@ namespace LostPolygon.AndroidBluetoothMultiplayer.Examples {
 
             // Stopping all Bluetooth connectivity on Unity networking disconnect event
             AndroidBluetoothMultiplayer.Stop();
+            DestroyGameObjects();
 
+        }
+        // Destroy game object
+        void DestroyGameObjects()
+        {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("Destroy");
-            if (objects != null) {
-                foreach ( GameObject obj in objects) {
+            if ( objects != null )
+            {
+                foreach ( GameObject obj in objects )
+                {
                     Destroy(obj.gameObject);
                 }
             }
         }
-
         private void OnConnectedToServer() {
             Debug.Log("Connected to server");
 

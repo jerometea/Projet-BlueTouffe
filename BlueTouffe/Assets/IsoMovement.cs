@@ -13,11 +13,12 @@ public class IsoMovement : MonoBehaviour {
     NetworkView _networkView;
 
 
-    public Camera _camera;
+    GameObject _camera;
     // Use this for initialization
 
     void Start () {
         _Joystick = Instantiate(_Joystick);
+        _camera = GameObject.Find("MainCamera");
     }
 
     void Awake()
@@ -71,7 +72,7 @@ public class IsoMovement : MonoBehaviour {
         if ( _networkView.isMine )
         {
             transform.Translate(new Vector3(_Joystick.JoystickInput.x, _Joystick.JoystickInput.y, 0) * speed * Time.deltaTime, Space.World);
-            _camera.transform.Translate(transform.position.x,transform.position.y,0);
+            _camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
 
         }
 
