@@ -24,7 +24,7 @@ public class BlueTouffeInstaller : MonoInstaller {
         Container.Bind<GameObject>("FullFloor").ToInstance(_settings.Map.FullFloor);
         Container.Bind<GameObject>("Moutains").ToInstance(_settings.Map.Moutains);
         Container.Bind<GameObject>("MoutainsTop").ToInstance(_settings.Map.MoutainsTop);
-        Container.Bind<GameObject>("Character").ToSingleInstance(_settings.Character.Character);
+        Container.Bind<GameObject>("Character").ToInstance(_settings.Character.Character);
 
     }
 

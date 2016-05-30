@@ -252,9 +252,9 @@ namespace LostPolygon.AndroidBluetoothMultiplayer.Examples {
             // Stopping all Bluetooth connectivity on Unity networking disconnect event
             AndroidBluetoothMultiplayer.Stop();
 
-            TestActor[] objects = FindObjectsOfType(typeof(TestActor)) as TestActor[];
+            GameObject[] objects = GameObject.FindGameObjectsWithTag("Destroy");
             if (objects != null) {
-                foreach (TestActor obj in objects) {
+                foreach ( GameObject obj in objects) {
                     Destroy(obj.gameObject);
                 }
             }
