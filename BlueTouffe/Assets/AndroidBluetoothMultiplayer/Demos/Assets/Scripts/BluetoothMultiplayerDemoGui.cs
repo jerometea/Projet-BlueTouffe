@@ -11,17 +11,27 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 {
     GameObject _character;
 
+    GameObject _buildings;
+    GameObject _fullFloor;
+    GameObject _moutains;
+    GameObject _moutainsTop;
+
     [PostInject]
-    public void Construct([Inject("Character")] GameObject character)
+    public void Construct(
+        [Inject("Character")] GameObject character,
+        [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, [Inject("Moutains")] GameObject moutains, [Inject("MoutainsTop")] GameObject moutainsTop )
     {
-
         _character = character;
-
+        _buildings = buildings;
+        _fullFloor = fullFloor;
+        _moutains = moutains;
+        _moutainsTop = moutainsTop;
     }
 
     public GameObject playerDisplay;
     public GameObject canvasPrefab;
-    public NetworkView _view;
+
+
     GameObject canvas;
     List<NetworkPlayer> _playerList;
     private const string kLocalIp = "127.0.0.1"; // An IP for Network.Connect(), must always be 127.0.0.1
@@ -186,6 +196,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         {
             AndroidBluetoothMultiplayer.StopDiscovery();
             AndroidBluetoothMultiplayer.Stop();
+            DestroyGameObjects();
         }
         catch
         {
@@ -328,15 +339,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
         // Stopping all Bluetooth connectivity on Unity networking disconnect event
         AndroidBluetoothMultiplayer.Stop();
-
-        TestActor[] objects = FindObjectsOfType(typeof(TestActor)) as TestActor[];
-        if (objects != null)
-        {
-            foreach (TestActor obj in objects)
-            {
-                Destroy(obj.gameObject);
-            }
-        }
+        DestroyGameObjects();
     }
 
     private void OnConnectedToServer()
@@ -345,27 +348,42 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
     }
 
-    void DestroyGameObjects()
+
+
+    [RPC]
+    public void InstantiateCharacter()
+    {
+        if (_character == null) Debug.Log("character null");
+        Network.Instantiate(_character, _character.transform.position, _character.transform.rotation, 0);
+
+        if ( Network.isServer )
+        {
+            if ( _fullFloor == null ) Debug.Log("floor null");
+            Network.Instantiate(_fullFloor, _fullFloor.transform.position, _fullFloor.transform.rotation, 0);
+
+            if ( _buildings == null ) Debug.Log("building null");
+            Network.Instantiate(_buildings, _buildings.transform.position, _buildings.transform.rotation, 0);
+
+            if ( _moutains == null ) Debug.Log("moutains null");
+            Network.Instantiate(_moutains, _moutains.transform.position, _moutains.transform.rotation, 0);
+
+            if ( _moutainsTop == null ) Debug.Log("moutains top null");
+            Network.Instantiate(_moutainsTop, _moutainsTop.transform.position, _moutainsTop.transform.rotation, 0);
+        }
+    }
+
+    [RPC]
+    public void DestroyGameObjects()
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Destroy");
-        if (objects != null)
+        if ( objects != null )
         {
-            foreach (GameObject obj in objects)
+            foreach ( GameObject obj in objects )
             {
                 Destroy(obj.gameObject);
             }
         }
     }
-
-    [RPC]
-    public void InstantiateCharacter()
-    {
-        DestroyGameObjects();
-        if (_character == null) Debug.Log("character null");
-        Network.Instantiate(_character, _character.transform.position, _character.transform.rotation, 0);
-        
-    }
-
     private void OnServerInitialized()
     {
         Debug.Log("Server initialized");
@@ -374,7 +392,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         if (Network.isServer)
         {
             _numberPlayer = 1;
-            CreatPlayerDisplay("Hoster", 0, 100);
+            CreatPlayerDisplay("Host", 0, 100);
             canvas = Instantiate(canvasPrefab) as GameObject;
         }
     }

@@ -6,7 +6,7 @@ using Zenject;
 public class IsoMovement : MonoBehaviour {
 
 
-    float speed = 30;
+    float speed = 100;
 
     public Joystick _Joystick;
 
