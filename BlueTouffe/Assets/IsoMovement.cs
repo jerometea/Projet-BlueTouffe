@@ -4,13 +4,16 @@ using IsoTools;
 
 public class IsoMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public GameObject _cam;
+    public int _distCam = 5;
+
+    // Use this for initialization
+    void Start () {
+        _cam = GameObject.Find("Main Camera");
+    }
+
+    // Update is called once per frame
+    void Update () {
         var iso_rigidbody = GetComponent<IsoRigidbody>();
         if (iso_rigidbody)
         {
@@ -46,10 +49,7 @@ public class IsoMovement : MonoBehaviour {
             {
                 iso_rigidbody.velocity = new Vector3(2, 0, 0);
             }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                iso_rigidbody.AddForce(new Vector3(0, 0, 1), ForceMode.Impulse);
-            }
+            _cam.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - _distCam);
         }
-	}
+    }
 }
