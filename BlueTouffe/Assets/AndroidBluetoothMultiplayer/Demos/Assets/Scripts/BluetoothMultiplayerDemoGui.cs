@@ -9,6 +9,7 @@ using Zenject;
 
 public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 {
+    GameObject _joystick;
     GameObject _character;
 
     GameObject _buildings;
@@ -18,9 +19,11 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
     [PostInject]
     public void Construct(
+        [Inject("Controls")] GameObject joystick, 
         [Inject("Character")] GameObject character,
         [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, [Inject("Moutains")] GameObject moutains, [Inject("MoutainsTop")] GameObject moutainsTop )
     {
+        _joystick = joystick;
         _character = character;
         _buildings = buildings;
         _fullFloor = fullFloor;
@@ -353,6 +356,9 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     [RPC]
     public void InstantiateCharacter()
     {
+        if ( _joystick == null ) Debug.Log("joystick null");
+        Instantiate(_joystick);
+
         if (_character == null) Debug.Log("character null");
         Network.Instantiate(_character, _character.transform.position, _character.transform.rotation, 0);
 

@@ -6,9 +6,9 @@ using Zenject;
 public class IsoMovement : MonoBehaviour {
 
 
-    float speed = 100;
+    float speed = 3;
 
-    public Joystick _Joystick;
+    Joystick _Joystick;
 
     NetworkView _networkView;
 
@@ -17,8 +17,9 @@ public class IsoMovement : MonoBehaviour {
     // Use this for initialization
 
     void Start () {
-        _Joystick = Instantiate(_Joystick);
+        //_Joystick = Instantiate(_Joystick);
         _camera = GameObject.Find("MainCamera");
+        _Joystick = (Joystick) FindObjectOfType(typeof(Joystick));
     }
 
     void Awake()
@@ -71,7 +72,17 @@ public class IsoMovement : MonoBehaviour {
 
         if ( _networkView.isMine )
         {
-            transform.Translate(new Vector3(_Joystick.JoystickInput.x, _Joystick.JoystickInput.y, 0) * speed * Time.deltaTime, Space.World);
+            if ( _Joystick.JoystickInput.x < 0 )
+                _Joystick.JoystickInput.x = -1;
+            else if ( _Joystick.JoystickInput.x > 0 )
+                _Joystick.JoystickInput.x = 1;
+
+            if ( _Joystick.JoystickInput.y < 0 )
+                _Joystick.JoystickInput.y = -1;
+            else if ( _Joystick.JoystickInput.y > 0 )
+                _Joystick.JoystickInput.y = 1;
+
+            transform.Translate(new Vector3(_Joystick.JoystickInput.x, _Joystick.JoystickInput.y, 0) * speed , Space.World);
             _camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
 
         }
