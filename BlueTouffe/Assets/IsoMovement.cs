@@ -6,7 +6,7 @@ using Zenject;
 public class IsoMovement : MonoBehaviour {
 
 
-    float speed = 3;
+    float speed = 120;
 
     Joystick _Joystick;
 
@@ -71,14 +71,14 @@ public class IsoMovement : MonoBehaviour {
 
         if ( _networkView.isMine )
         {
-            //if (_Joystick.JoystickInput.x < 0)
-            //    _Joystick.JoystickInput.x = -1;
-            //else if (_Joystick.JoystickInput.x > 0)
-            //    _Joystick.JoystickInput.x = 1;
-            //if (_Joystick.JoystickInput.y < 0)
-            //    _Joystick.JoystickInput.y = -1;
-            //else if (_Joystick.JoystickInput.y > 0)
-            //    _Joystick.JoystickInput.y = 1;
+            if ( _Joystick.JoystickInput.x < 0 )
+                _Joystick.JoystickInput.x = -1;
+            else if ( _Joystick.JoystickInput.x > 0 )
+                _Joystick.JoystickInput.x = 1;
+            if ( _Joystick.JoystickInput.y < 0 )
+                _Joystick.JoystickInput.y = -1;
+            else if ( _Joystick.JoystickInput.y > 0 )
+                _Joystick.JoystickInput.y = 1;
 
             transform.Translate(new Vector3(_Joystick.JoystickInput.x, _Joystick.JoystickInput.y, 0) * speed * Time.deltaTime, Space.World);
             _camera.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
