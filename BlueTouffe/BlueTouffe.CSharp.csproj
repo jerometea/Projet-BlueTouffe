@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -132,6 +126,11 @@
     <Compile Include="Assets\Reporter\Test\TestReporter.cs" />
     <Compile Include="Assets\Scripts\BlueTouffeInstaller.cs" />
     <Compile Include="Assets\Scripts\ClickOnGo.cs" />
+    <Compile Include="Assets\Scripts\Menu\Bluetooth.cs" />
+    <Compile Include="Assets\Scripts\Menu\EcranAccueil.cs" />
+    <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\MultiplayerMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\SoloMenu.cs" />
     <Compile Include="Assets\Scripts\MoveScript.cs" />
     <Compile Include="Assets\Scripts\MultiplayerTest.cs" />
     <Compile Include="Assets\Scripts\PlayerDisplayScript.cs" />

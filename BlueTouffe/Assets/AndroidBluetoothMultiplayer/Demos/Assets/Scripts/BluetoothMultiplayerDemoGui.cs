@@ -9,6 +9,7 @@ using Zenject;
 
 public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 {
+    GameObject _joystick;
     GameObject _character;
 
     GameObject _buildings;
@@ -18,9 +19,11 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
     [PostInject]
     public void Construct(
+        [Inject("Controls")] GameObject joystick,
         [Inject("Character")] GameObject character,
         [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, [Inject("Moutains")] GameObject moutains, [Inject("MoutainsTop")] GameObject moutainsTop )
     {
+        _joystick = joystick;
         _character = character;
         _buildings = buildings;
         _fullFloor = fullFloor;
@@ -30,6 +33,10 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
     public GameObject playerDisplay;
     public GameObject canvasPrefab;
+    public GameObject menuStartPrefab;
+    public GameObject menuNextPrefab;
+
+    bool _menu;
 
 
     GameObject canvas;
@@ -57,7 +64,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         Debug.Log("Creation of a Player Display : x = " + x + " y = " + _numberPlayer * 100);
         GameObject newItem = Network.Instantiate(playerDisplay, playerDisplay.transform.position, Quaternion.identity, 1) as GameObject;
         newItem.name = "player" + _numberPlayer;
-        newItem.GetComponent<Transform>().position = new Vector3(x, _numberPlayer * (-100), 0);
+        newItem.GetComponent<Transform>().position = new Vector3(130, _numberPlayer * (-100), 0);
         //newItem.GetComponent<PlayerDisplayScript>()
         for (int i = 0; i < newItem.transform.childCount - 1; i++)
         {
@@ -123,56 +130,12 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     {
         float scaleFactor = BluetoothExamplesTools.UpdateScaleMobile();
         // If initialization was successfull, showing the buttons
-        if (_initResult)
+        if (_initResult && !_menu)
         {
-            // If there is no current Bluetooth connectivity
-            BluetoothMultiplayerMode currentMode = AndroidBluetoothMultiplayer.GetCurrentMode();
-            if (currentMode == BluetoothMultiplayerMode.None)
-            {
-                if (GUI.Button(new Rect(10, 10, 150, 50), "Create server"))
-                {
-                    // If Bluetooth is enabled, then we can do something right on
-                    if (AndroidBluetoothMultiplayer.GetIsBluetoothEnabled())
-                    {
-                        AndroidBluetoothMultiplayer.RequestEnableDiscoverability(120);
-                        Network.Disconnect(); // Just to be sure
-                        AndroidBluetoothMultiplayer.StartServer(kPort);
-                    }
-                    else
-                    {
-                        // Otherwise we have to enable Bluetooth first and wait for callback
-                        _desiredMode = BluetoothMultiplayerMode.Server;
-                        AndroidBluetoothMultiplayer.RequestEnableDiscoverability(120);
-                    }
-                }
-
-                if (GUI.Button(new Rect(170, 10, 150, 50), "Connect to server"))
-                {
-                    // If Bluetooth is enabled, then we can do something right on
-                    if (AndroidBluetoothMultiplayer.GetIsBluetoothEnabled())
-                    {
-                        Network.Disconnect(); // Just to be sure
-                        AndroidBluetoothMultiplayer.ShowDeviceList(); // Open device picker dialog
-                    }
-                    else
-                    {
-                        // Otherwise we have to enable Bluetooth first and wait for callback
-                        _desiredMode = BluetoothMultiplayerMode.Client;
-                        AndroidBluetoothMultiplayer.RequestEnableBluetooth();
-                    }
-                }
-            }
-            else
-            {
-                // Stop all networking
-                if (GUI.Button(new Rect(10, 10, 150, 50), currentMode == BluetoothMultiplayerMode.Client ? "Disconnect" : "Stop server"))
-                {
-                    if (Network.peerType != NetworkPeerType.Disconnected)
-                        Network.Disconnect();
-                }
-            }
+            Instantiate(menuStartPrefab);
+            _menu = true;
         }
-        else
+        if (!_initResult)
         {
             // Show a message if initialization failed for some reason
             GUI.contentColor = Color.black;
@@ -180,13 +143,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
                 new Rect(10, 10, Screen.width / scaleFactor - 10, 50),
                 "Bluetooth not available. Are you running this on Bluetooth-capable " +
                 "Android device and AndroidManifest.xml is set up correctly?");
-
-
-
-
         }
-
-        DrawBackButton(scaleFactor);
     }
 
     protected override void OnBackToMenu()
@@ -353,6 +310,9 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     [RPC]
     public void InstantiateCharacter()
     {
+        if (_joystick == null) Debug.Log("joystick null");
+        Instantiate(_joystick);
+
         if (_character == null) Debug.Log("character null");
         Network.Instantiate(_character, _character.transform.position, _character.transform.rotation, 0);
 
@@ -391,7 +351,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         // Instantiating a simple test actor
         if (Network.isServer)
         {
-            _numberPlayer = 1;
+            _numberPlayer = 0;
             CreatPlayerDisplay("Host", 0, 100);
             canvas = Instantiate(canvasPrefab) as GameObject;
         }
