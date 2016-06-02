@@ -14,8 +14,10 @@ public class PlayerDisplayScript : MonoBehaviour {
     [RPC]
     public void ChangeName (string name)
     {
+        Debug.Log("Change name to : " + name);
         for (int i = 0; i < transform.childCount - 1; i++)
         {
+            Debug.Log(transform.childCount);
             if (transform.GetChild(i).transform.name == "Name")
             {
                 transform.GetChild(i).transform.GetComponent<TextMesh>().text = name;
@@ -25,7 +27,7 @@ public class PlayerDisplayScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
