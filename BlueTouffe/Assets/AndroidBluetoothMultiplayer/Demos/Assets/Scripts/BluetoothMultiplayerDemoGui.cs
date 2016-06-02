@@ -327,8 +327,8 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
             if ( _moutains == null ) Debug.Log("moutains null");
             Network.Instantiate(_moutains, _moutains.transform.position, _moutains.transform.rotation, 0);
 
-            if ( _moutainsTop == null ) Debug.Log("moutains top null");
-            Network.Instantiate(_moutainsTop, _moutainsTop.transform.position, _moutainsTop.transform.rotation, 0);
+            //if ( _moutainsTop == null ) Debug.Log("moutains top null");
+            //Network.Instantiate(_moutainsTop, _moutainsTop.transform.position, _moutainsTop.transform.rotation, 0);
         }
     }
 
