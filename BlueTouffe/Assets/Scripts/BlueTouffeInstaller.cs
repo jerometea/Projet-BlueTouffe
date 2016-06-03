@@ -21,6 +21,7 @@ public class BlueTouffeInstaller : MonoInstaller {
         Container.Bind<GameObject>("Moutains").ToInstance(_settings.Map.Moutains);
         Container.Bind<GameObject>("MoutainsTop").ToInstance(_settings.Map.MoutainsTop);
         Container.Bind<GameObject>("Character").ToInstance(_settings.Character.Character);
+        Container.Bind<GameObject>("Zombie").ToInstance(_settings.Zombie.Zombie);
         Container.Bind<GameObject>("Controls").ToInstance(_settings.ControlJoystick.Joystick);
 
     }
@@ -31,6 +32,7 @@ public class BlueTouffeInstaller : MonoInstaller {
         public MapSettigns Map;
         public CharacterSettings Character;
         public ControlsSettings ControlJoystick;
+        public ZombieSettings Zombie;
 
 
 
@@ -48,7 +50,11 @@ public class BlueTouffeInstaller : MonoInstaller {
         {
             public GameObject Character;
         }
-
+        [Serializable]
+        public class ZombieSettings
+        {
+            public GameObject Zombie;
+        }
         [Serializable]
         public class ControlsSettings
         {

@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -118,6 +124,8 @@
     <Compile Include="Assets\IsoTools\Tiled\TiledMapLayer.cs" />
     <Compile Include="Assets\IsoTools\Tiled\TiledMapProperties.cs" />
     <Compile Include="Assets\IsoTools\Tiled\TiledMapTileset.cs" />
+    <Compile Include="Assets\Mobs\HealthEnemy.cs" />
+    <Compile Include="Assets\Mobs\Zombie.cs" />
     <Compile Include="Assets\Reporter\MultiKeyDictionary.cs" />
     <Compile Include="Assets\Reporter\Reporter.cs" />
     <Compile Include="Assets\Reporter\ReporterGUI.cs" />
@@ -126,6 +134,7 @@
     <Compile Include="Assets\Reporter\Test\TestReporter.cs" />
     <Compile Include="Assets\Scripts\BlueTouffeInstaller.cs" />
     <Compile Include="Assets\Scripts\ClickOnGo.cs" />
+    <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\Menu\Bluetooth.cs" />
     <Compile Include="Assets\Scripts\Menu\EcranAccueil.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
