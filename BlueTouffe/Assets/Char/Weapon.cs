@@ -7,12 +7,12 @@ public class Weapon : MonoBehaviour {
     int Damage;
     public LayerMask ToHit;
     int timeToFire;
-    int weap = 2; // 1 - snip, 2 - shotgun, 3 - close combat 
+    int weap = 1; // 1 - snip, 2 - shotgun, 3 - close combat 
     Transform shooter;
 
 	// Use this for initialization1
 	void Start () {
-        fireRate = 30;
+        fireRate = 0;
         Damage = 10;
         timeToFire = 0;
 
@@ -67,12 +67,13 @@ public class Weapon : MonoBehaviour {
    }
 
 
-    void Shoot(float x, float y)
+    void Shoot( float x, float y )
     {
         Vector2 shooterPosition = new Vector2(shooter.position.x, shooter.position.y);
         Vector2 direction = new Vector2( shooter.position.x + x, shooter.position.y + y);
         RaycastHit2D hit = Physics2D.Linecast(shooterPosition, direction, ToHit);
-        Debug.DrawLine(shooterPosition, direction);
+        Debug.DrawLine( shooterPosition, direction );
+        
 
         if( weap == 2 )
         {
@@ -99,6 +100,7 @@ public class Weapon : MonoBehaviour {
             
         }
     }
+
     public int GetWeapon
     {
         get { return weap; }
