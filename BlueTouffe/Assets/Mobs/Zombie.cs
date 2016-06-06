@@ -6,12 +6,12 @@ public class Zombie : MonoBehaviour
 {
     public bool EnterTrigger;
     public GameObject Hero;
-    public int speed = 10;
+    public float speed = 10;
+    NetworkView _nw;
 
     // Use this for initialization
     void Start()
     {
-
     }
 
     // Update is called once per frame
