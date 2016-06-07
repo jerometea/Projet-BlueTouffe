@@ -9,6 +9,8 @@ using Zenject;
 
 public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 {
+    ZombieSpawner _zombieSpawner;
+
     GameObject _zombie;
     GameObject _joystick;
     GameObject _character;
@@ -20,18 +22,20 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
     [PostInject]
     public void Construct(
-        [Inject("Zombie")] GameObject zombie,
+        ZombieSpawner zombieSpawner,
+        //[Inject("Zombie")] GameObject zombie,
         [Inject("Controls")] GameObject joystick,
         [Inject("Character")] GameObject character,
         [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, [Inject("Moutains")] GameObject moutains, [Inject("MoutainsTop")] GameObject moutainsTop )
     {
+        _zombieSpawner = zombieSpawner;
         _joystick = joystick;
         _character = character;
         _buildings = buildings;
         _fullFloor = fullFloor;
         _moutains = moutains;
         _moutainsTop = moutainsTop;
-        _zombie = zombie;
+        //_zombie = zombie;
     }
 
     public GameObject playerDisplay;
@@ -321,8 +325,9 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
         if ( Network.isServer )
         {
-            if ( _zombie == null ) Debug.Log("zombie null");
-            Network.Instantiate(_zombie, _zombie.transform.position, _zombie.transform.rotation, 0);
+
+            //if ( _zombie == null ) Debug.Log("zombie null");
+            //Network.Instantiate(_zombie, _zombie.transform.position, _zombie.transform.rotation, 0);
 
 
             if ( _fullFloor == null ) Debug.Log("floor null");

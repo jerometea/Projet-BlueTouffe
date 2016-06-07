@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using Zenject;
 
 public class Zombie : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Zombie : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
         if (Hero != null)
@@ -43,5 +44,16 @@ public class Zombie : MonoBehaviour
     public void Stop()
     {
         Hero = null;
+    }
+
+    public class Factory : GameObjectFactory<GameObject>
+    {
+
+        override
+        public GameObject  Create()
+        {
+         GameObject a = (GameObject)  Network.Instantiate(_prefab, _prefab.transform.position, _prefab.transform.rotation, 1);
+            return a;
+        }
     }
 }
