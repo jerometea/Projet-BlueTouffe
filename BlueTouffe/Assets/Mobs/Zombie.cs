@@ -8,7 +8,6 @@ public class Zombie : MonoBehaviour
     public bool EnterTrigger;
     public GameObject Hero;
     public float speed = 10;
-    NetworkView _nw;
 
     // Use this for initialization
     void Start()
@@ -44,16 +43,5 @@ public class Zombie : MonoBehaviour
     public void Stop()
     {
         Hero = null;
-    }
-
-    public class Factory : GameObjectFactory<GameObject>
-    {
-
-        override
-        public GameObject  Create()
-        {
-         GameObject a = (GameObject)  Network.Instantiate(_prefab, _prefab.transform.position, _prefab.transform.rotation, 1);
-            return a;
-        }
     }
 }

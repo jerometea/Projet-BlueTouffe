@@ -6,28 +6,28 @@ using System.Collections.Generic;
 
 public class ZombieSpawner : ITickable {
 
+    [Inject("Zombie")]
+    GameObject _zombiePrefab;
 
-    Zombie.Factory _zombieFacto;
     List<GameObject> _zombieList;
 
-    public ZombieSpawner ( Zombie.Factory zombieFacto )
+    public ZombieSpawner ()
     {
-        _zombieFacto = zombieFacto;
         _zombieList = new List<GameObject>();
     }
 
     public void Tick()
     {
-        if( _zombieList.Count < 50 && Network.isServer )
+        if( _zombieList.Count < 500  )
         {
-            GameObject z = _zombieFacto.Create();
-            z.transform.position = RandomPosition();
-            _zombieList.Add(z);
+            _zombieList.Add((GameObject) Network.Instantiate(_zombiePrefab, RandomPosition(), _zombiePrefab.transform.rotation, 1));
+            Debug.Log(_zombieList.Count);
         }
+
     }
 
     Vector2 RandomPosition()
     {
-        return new Vector2(UnityEngine.Random.Range(-3200, -62), UnityEngine.Random.Range(-540, 1200));
+        return new Vector3(UnityEngine.Random.Range(-1080, 2152), UnityEngine.Random.Range(-1293, 516));
     }
 }

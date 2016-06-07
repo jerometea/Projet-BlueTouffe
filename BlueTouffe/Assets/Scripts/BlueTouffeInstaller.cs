@@ -24,11 +24,11 @@ public class BlueTouffeInstaller : MonoInstaller {
         Container.Bind<GameObject>("Controls").ToInstance(_settings.ControlJoystick.Joystick);
 
 
-        //Container.Bind<GameObject>("Zombie").ToInstance(_settings.Zombie.Zombie);
+        Container.Bind<GameObject>("Zombie").ToInstance(_settings.Zombie.Zombie);
 
         Container.Bind<ITickable>().ToSingle<ZombieSpawner>();
         Container.Bind<ZombieSpawner>().ToSingle();
-        Container.BindGameObjectFactory<Zombie.Factory>(_settings.Zombie.Zombie, "Zombie");
+        //Container.BindGameObjectFactory<Zombie.Factory>(_settings.Zombie.Zombie, "Zombie");
 
 
     }
