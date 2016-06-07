@@ -313,6 +313,8 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     [RPC]
     public void InstantiateCharacter()
     {
+        gameObject.GetComponent<Camera>().orthographicSize = 150;
+
         if (_joystick == null) Debug.Log("joystick null");
         Instantiate(_joystick);
 
