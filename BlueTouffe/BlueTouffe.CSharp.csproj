@@ -125,6 +125,7 @@
     <Compile Include="Assets\IsoTools\Tiled\TiledMapTileset.cs" />
     <Compile Include="Assets\Mobs\HealthEnemy.cs" />
     <Compile Include="Assets\Mobs\MobsController.cs" />
+    <Compile Include="Assets\ProjController.cs" />
     <Compile Include="Assets\Zenject\OptionalExtras\CommandsAndSignals\Command\Binders\CommandBinder0.cs" />
     <Compile Include="Assets\Zenject\OptionalExtras\CommandsAndSignals\Command\Binders\CommandBinder1.cs" />
     <Compile Include="Assets\Zenject\OptionalExtras\CommandsAndSignals\Command\Binders\CommandBinder2.cs" />

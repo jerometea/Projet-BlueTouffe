@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CharHealth : MonoBehaviour {
-    float _health = 100f;
+    float _health = 100;
     float _resetAfterDeathTime = 5f;
     Animator _anim;
     bool _playerDead;
@@ -14,7 +14,7 @@ public class CharHealth : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if( _health <= 0f )
+        if( _health <= 0 )
         {
             PlayerDead();
         }
@@ -33,5 +33,10 @@ public class CharHealth : MonoBehaviour {
     {
         // Decrement the player's health by amount.
         _health -= amount;
+    }
+
+    public bool IsDead
+    {
+        get { return _playerDead; }
     }
 }

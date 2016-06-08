@@ -10,7 +10,7 @@ public class HealthEnemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        MaxHealth = 40;
+        MaxHealth = 30;
         Health = MaxHealth;
         anim = GetComponent< Animator > ();
     }
@@ -42,5 +42,10 @@ public class HealthEnemy : MonoBehaviour {
         isDead = true;
         anim.SetBool( "IsDead", true );
         gameObject.layer = 0;
+    }
+
+    public bool IsDead
+    {
+        get { return isDead; }
     }
 }

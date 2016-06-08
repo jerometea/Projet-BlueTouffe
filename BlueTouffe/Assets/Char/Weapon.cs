@@ -3,17 +3,15 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour {
 
-    int fireRate;
-    int Damage;
+    public int fireRate = 0;
     public LayerMask ToHit;
     int timeToFire;
-    int weap = 1; // 1 - snip, 2 - shotgun, 3 - close combat 
+    public int weap = 1; // 1 - snip, 2 - shotgun, 3 - close combat
     Transform shooter;
+    public GameObject proj;
 
 	// Use this for initialization1
 	void Start () {
-        fireRate = 0;
-        Damage = 10;
         timeToFire = 0;
 
         shooter = transform.FindChild( "Shooter" );
@@ -31,7 +29,7 @@ public class Weapon : MonoBehaviour {
         timeToFire++;
         if( x != 0 || y != 0 )
         {
-            if(fireRate == 0)
+            if(fireRate == 00)
             {
                 AdaptInput( x, y );
             } else if( timeToFire % fireRate == 0 || timeToFire == 0 )
@@ -46,10 +44,14 @@ public class Weapon : MonoBehaviour {
         float modifiedX = x;
         float modifiedY = y;
 
+        //Distance and angle parameter
         if( x != 0 && y != 0 )
         {
-            modifiedX = modifiedX / 2;
-            modifiedY = modifiedY / 2;
+            if(weap != 1)
+            {
+                modifiedX = modifiedX / 1.5f;
+                modifiedY = modifiedY / 1.5f;
+            }
         }
 
         if( weap == 2 )
@@ -63,44 +65,30 @@ public class Weapon : MonoBehaviour {
             modifiedY = modifiedY / 5;
         }
 
-       Shoot( modifiedX, modifiedY );
+        //send modified parameter
+        Shoot( modifiedX, modifiedY );
    }
 
 
-    void Shoot( float x, float y )
+    void Shoot(float x, float y)
     {
         Vector2 shooterPosition = new Vector2(shooter.position.x, shooter.position.y);
-        Vector2 direction = new Vector2( shooter.position.x + x, shooter.position.y + y);
-        RaycastHit2D hit = Physics2D.Linecast(shooterPosition, direction, ToHit);
-        Debug.DrawLine( shooterPosition, direction );
-        
+        GameObject proj1 = Instantiate( proj, shooterPosition, shooter.rotation ) as GameObject;
+        proj1.GetComponent<ProjController>().FireInTheHole( new Vector2(x, y) );
 
         if( weap == 2 )
         {
-            //Vector2 direction2 = new Vector2( shooter.position.x + x, shooter.position.y + y );
-            //RaycastHit2D hit2 = Physics2D.Linecast( shooterPosition, direction2, ToHit );
-            //Debug.DrawLine( shooterPosition, direction2 );
-            
-            //Vector2 direction3 = new Vector2(shooter.position.x + x, shooter.position.y + y);
-            //RaycastHit2D hit3 = Physics2D.Linecast(shooterPosition, direction3, ToHit);
-            //Debug.DrawLine( shooterPosition, direction3 );
-        }
-        
+            Vector2 target2 = new Vector2( x, y );
+            target2 = Quaternion.Euler( 0, 0, 10 ) * target2;
+            GameObject proj2 = Instantiate( proj, shooterPosition, shooter.rotation ) as GameObject;
+            proj2.GetComponent<ProjController>().FireInTheHole( target2 );
 
-        if(hit.collider != null )
-        {
-            Debug.Log( "We hit "+ hit.collider.name + " and did "+ Damage +" damage.");
-            Debug.DrawLine( shooterPosition, hit.point, Color.red);
-
-            if( hit.collider.GetComponent<HealthEnemy>() != null )
-            {
-                HealthEnemy HealthEnemy = hit.collider.GetComponent<HealthEnemy>();
-                HealthEnemy.ReceiveDamage( Damage );
-             }
-            
+            Vector2 target3 = new Vector2( x, y );
+            target3 = Quaternion.Euler( 0, 0, -10 ) * target3;
+            GameObject proj3 = Instantiate( proj, shooterPosition, shooter.rotation ) as GameObject;
+            proj3.GetComponent<ProjController>().FireInTheHole( target3 );
         }
     }
-
     public int GetWeapon
     {
         get { return weap; }
