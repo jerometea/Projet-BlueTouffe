@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour {
     public int weap = 1; // 1 - snip, 2 - shotgun, 3 - close combat
     Transform shooter;
     public GameObject proj;
+    public TouchPad _touchBullet;
 
 	// Use this for initialization1
 	void Start () {
@@ -23,8 +24,8 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float x = Input.GetAxisRaw("Horizontal2");
-        float y = Input.GetAxisRaw("Vertical2");
+        float x = _touchBullet.TouchPadInput.x;
+        float y = _touchBullet.TouchPadInput.y;
 
         timeToFire++;
         if( x != 0 || y != 0 )
@@ -74,7 +75,7 @@ public class Weapon : MonoBehaviour {
     {
         Vector2 shooterPosition = new Vector2(shooter.position.x, shooter.position.y);
         GameObject proj1 = Instantiate( proj, shooterPosition, shooter.rotation ) as GameObject;
-        proj1.GetComponent<ProjController>().FireInTheHole( new Vector2(x, y) );
+        proj1.GetComponent<ProjController>().FireInTheHole( _touchBullet.TouchPadInput );
 
         if( weap == 2 )
         {

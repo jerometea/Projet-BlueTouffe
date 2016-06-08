@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class ProjController : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class ProjController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Damage = 10;
-        Destroy( gameObject, 0.75f );
+        Destroy( gameObject, 0.2f );
     }
 	
 	// Update is called once per frame
@@ -21,7 +22,7 @@ public class ProjController : MonoBehaviour {
     {
         CharController CharC = GameObject.Find("Char").GetComponent<CharController>();
         Rigidbody2D rigi2D = GetComponent<Rigidbody2D>();
-        rigi2D.velocity = direction * 3;
+        rigi2D.velocity = direction / ( float ) (Math.Sqrt( direction.x * direction.x + direction.y * direction.y ) /3);
     }
 
     void OnTriggerEnter2D(Collider2D other)

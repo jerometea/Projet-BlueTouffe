@@ -4,6 +4,7 @@ using IsoTools;
 
 public class IsoMovement : MonoBehaviour {
 
+    public TouchPad _touchPad;
 	// Use this for initialization
 	void Start () {
 	
@@ -50,6 +51,9 @@ public class IsoMovement : MonoBehaviour {
             {
                 iso_rigidbody.AddForce(new Vector3(0, 0, 1), ForceMode.Impulse);
             }
+            transform.Translate(_touchPad.TouchPadInput);
+
         }
-	}
+
+    }
 }

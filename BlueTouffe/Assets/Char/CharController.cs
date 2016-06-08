@@ -11,6 +11,7 @@ public class CharController : MonoBehaviour {
     float _cross = 1f;
     float shootY = 0;
     float shootX = 0;
+    public TouchPad _touchMove;
 
     // Use this for initialization
     void Start () {
@@ -43,6 +44,8 @@ public class CharController : MonoBehaviour {
                 _anim.SetBool( "IsRez", false );
             }
         }
+        transform.Translate(new Vector3(_touchMove.TouchPadInput.x, _touchMove.TouchPadInput.y, 0) * 5 * Time.deltaTime, Space.World);
+
     }
 
     void Shooting()
