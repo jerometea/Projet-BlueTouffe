@@ -11,14 +11,13 @@ public class CharController : MonoBehaviour {
     float _cross = 1f;
     float shootY = 0;
     float shootX = 0;
-    public Joystick _touchMove;
+    public TouchPad _touchMove;
 
     // Use this for initialization
     void Start () {
         _anim = GetComponent<Animator>();
         _cam = GameObject.Find( "Camera" );
-        _touchMove.transform.position = new Vector2(Screen.width / 4, Screen.height / 2);
-        _touchMove.TouchAria = new Vector2(Screen.width / 4, Screen.height);
+        _touchMove.TouchAria = new Vector2(Screen.width / 2, Screen.height);
     }
 
     // Update is called once per frame
@@ -46,7 +45,7 @@ public class CharController : MonoBehaviour {
                 _anim.SetBool( "IsRez", false );
             }
         }
-        transform.Translate(new Vector3(_touchMove.JoystickInput.x, _touchMove.JoystickInput.y, 0) * 5 * Time.deltaTime, Space.World);
+        transform.Translate(new Vector3(_touchMove.TouchPadInput.x, _touchMove.TouchPadInput.y, 0) * 5 * Time.deltaTime, Space.World);
 
     }
 
