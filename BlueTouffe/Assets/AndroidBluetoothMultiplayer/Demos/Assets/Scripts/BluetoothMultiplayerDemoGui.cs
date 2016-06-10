@@ -18,15 +18,13 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     GameObject _buildings;
     GameObject _fullFloor;
     GameObject _moutains;
-    GameObject _moutainsTop;
 
     [PostInject]
     public void Construct(
         ZombieSpawner zombieSpawner,
-        //[Inject("Zombie")] GameObject zombie,
         [Inject("Controls")] GameObject joystick,
         [Inject("Character")] GameObject character,
-        [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, [Inject("Moutains")] GameObject moutains, [Inject("MoutainsTop")] GameObject moutainsTop )
+        [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, [Inject("Moutains")] GameObject moutains)
     {
         _zombieSpawner = zombieSpawner;
         _joystick = joystick;
@@ -34,8 +32,6 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         _buildings = buildings;
         _fullFloor = fullFloor;
         _moutains = moutains;
-        _moutainsTop = moutainsTop;
-        //_zombie = zombie;
     }
 
     public GameObject playerDisplay;
@@ -323,26 +319,18 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         if (_character == null) Debug.Log("character null");
         Network.Instantiate(_character, _character.transform.position, _character.transform.rotation, 0);
 
-        //if ( _buildings == null ) Debug.Log("building null");
-        //Network.Instantiate(_buildings, _buildings.transform.position, _buildings.transform.rotation, 0);
-
-        if ( _fullFloor == null ) Debug.Log("floor null");
-        Network.Instantiate(_fullFloor, _fullFloor.transform.position, _fullFloor.transform.rotation, 0);
 
         if ( Network.isServer )
         {
+            if (_buildings == null) Debug.Log("building null");
+            Network.Instantiate(_buildings, _buildings.transform.position, _buildings.transform.rotation, 0);
 
-            //if ( _zombie == null ) Debug.Log("zombie null");
-            //Network.Instantiate(_zombie, _zombie.transform.position, _zombie.transform.rotation, 0);
+            if (_fullFloor == null) Debug.Log("floor null");
+            Network.Instantiate(_fullFloor, _fullFloor.transform.position, _fullFloor.transform.rotation, 0);
 
+            if (_moutains == null) Debug.Log("moutains null");
+            Network.Instantiate(_moutains, _moutains.transform.position, _moutains.transform.rotation, 0);
 
-
-
-            //if ( _moutains == null ) Debug.Log("moutains null");
-            //Network.Instantiate(_moutains, _moutains.transform.position, _moutains.transform.rotation, 0);
-
-            //if ( _moutainsTop == null ) Debug.Log("moutains top null");
-            //Network.Instantiate(_moutainsTop, _moutainsTop.transform.position, _moutainsTop.transform.rotation, 0);
         }
     }
 
