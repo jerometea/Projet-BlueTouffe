@@ -7,10 +7,19 @@ public class CharController : MonoBehaviour {
 
     Animator _anim;
     GameObject _cam;
+    Collider2D _friend;
+    public GameObject load;
+
+    bool _isRez;
     int _distCam = 0;
     float _cross = 1f;
-    float shootY = 0;
-    float shootX = 0;
+
+    float _shootY = 0;
+    float _shootX = 0;
+
+    int NeededTimeRez  = 100;
+    int TimeRez = 0;
+    public int rezSpeed = 1;
 
     // Use this for initialization
     void Start () {
@@ -23,40 +32,55 @@ public class CharController : MonoBehaviour {
     {
         if(!gameObject.GetComponent<CharHealth>().IsDead)
         {
-            shootY = Input.GetAxisRaw( "Vertical2" );
-            shootX = Input.GetAxisRaw( "Horizontal2" );
-
-            if( shootY == 0 && shootX == 0 )
-            {
-                Mouvement();
-            }
-            else
-            {
-                Shooting();
-            }
+            _shootY = Input.GetAxisRaw( "Vertical2" );
+            _shootX = Input.GetAxisRaw( "Horizontal2" );
 
             if( Input.GetButton( "Fire1" ) )
             {
-                _anim.SetBool( "IsRez", true );
-            } else
+                Ressurection();
+            }
+            else
             {
+                if( _shootY == 0 && _shootX == 0 )
+                {
+                    Mouvement();
+                }
+                else
+                {
+                    Shooting();
+                }
+                Destroy( GameObject.Find( "LoadingCanvas(Clone)" ) );
                 _anim.SetBool( "IsRez", false );
+                TimeRez = 0;
             }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.GetComponent<CharHealth>() != null )
+        {
+            _friend = other;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(_friend != null && _friend.name == other.name)
+         _friend = null;
     }
 
     void Shooting()
     {
 
         _anim.SetBool( "isShooting", true );
-        _anim.SetFloat( "shootY", shootY );
-        _anim.SetFloat( "shootX", shootX );
+        _anim.SetFloat( "shootY", _shootY );
+        _anim.SetFloat( "shootX", _shootX );
 
-        if( shootX > 0 )
+        if( _shootX > 0 )
         {
             transform.eulerAngles = new Vector2( 0, 180 );
-        }
-        else if( shootX < 0 )
+        } else if(_shootX < 0)
         {
             transform.eulerAngles = new Vector2( 0, 0 );
         }
@@ -100,13 +124,44 @@ public class CharController : MonoBehaviour {
         _cam.transform.position = new Vector3( transform.position.x, transform.position.y, transform.position.z - 1 );
     }
 
+    void Ressurection()
+    {
+        _anim.SetBool( "isShooting", false );
+        if( _friend != null )
+        {
+            Debug.Log( "plop" );
+
+            //if(!_friend.GetComponent<CharHealth>().IsDead)
+            if( _friend.GetComponent<Animator>().GetBool( "isDead" ) )
+            {
+                if( TimeRez == 0 )
+                {
+                    GameObject loading = Instantiate( load, gameObject.transform.position, gameObject.transform.rotation ) as GameObject;
+                    loading.GetComponentInChildren<RPB>().RezSpeed = rezSpeed;
+                    _anim.SetBool( "IsRez", true );
+                }
+                TimeRez += rezSpeed;
+
+                if( TimeRez == NeededTimeRez )
+                {
+                    _friend.GetComponent<CharHealth>().PlayerRez();
+                }
+            }
+        }
+    }
+
     public float ShootX
     {
-        get { return shootX; }
+        get { return _shootY; }
     }
 
     public float ShootY
     {
-        get { return shootY; }
+        get { return _shootX; }
+    }
+
+    public void GetHurt()
+    {
+        TimeRez = 0;
     }
 }

@@ -26,15 +26,19 @@ public class Weapon : MonoBehaviour {
         float x = Input.GetAxisRaw("Horizontal2");
         float y = Input.GetAxisRaw("Vertical2");
 
-        timeToFire++;
-        if( x != 0 || y != 0 )
+        if( gameObject.GetComponent<Animator>().GetBool( "isShooting" ) )
         {
-            if(fireRate == 00)
+            timeToFire++;
+            if( x != 0 || y != 0 )
             {
-                AdaptInput( x, y );
-            } else if( timeToFire % fireRate == 0 || timeToFire == 0 )
-            {
-                AdaptInput( x, y );
+                if( fireRate == 00 )
+                {
+                    AdaptInput( x, y );
+                }
+                else if( timeToFire % fireRate == 0 || timeToFire == 0 )
+                {
+                    AdaptInput( x, y );
+                }
             }
         }
     }

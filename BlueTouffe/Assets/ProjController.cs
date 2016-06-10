@@ -26,9 +26,9 @@ public class ProjController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log( "We hit " + other.name + " and did " + Damage + " damage." );
         if( other.GetComponent<HealthEnemy>() != null )
         {
+            Debug.Log( "We hit " + other.name + " and did " + Damage + " damage." );
             if( !other.GetComponent<HealthEnemy>().IsDead )
             {
                 HealthEnemy HealthEnemy = other.GetComponent<HealthEnemy>();
