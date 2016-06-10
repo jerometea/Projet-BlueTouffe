@@ -1,4 +1,4 @@
-﻿#if !NOT_UNITY3D
+﻿#if !ZEN_NOT_UNITY3D
 
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,6 @@ using UnityEngine;
 
 namespace Zenject
 {
-    // This factory type can be useful if you want to control where the prefab comes from at runtime
-    // rather than from within the installers
-
     //No parameters
     public class PrefabFactory<T> : IValidatable
         where T : Component
@@ -35,10 +32,9 @@ namespace Zenject
             return Create((GameObject)Resources.Load(prefabResourceName));
         }
 
-        public void Validate()
+        public System.Collections.Generic.IEnumerable<ZenjectResolveException> Validate()
         {
-            _container.InjectExplicit(
-                new ValidationMarker(typeof(T)), ValidationUtil.CreateDefaultArgs());
+            return _container.ValidateObjectGraph<T>();
         }
     }
 
@@ -54,8 +50,7 @@ namespace Zenject
             Assert.That(prefab != null,
                "Null prefab given to factory create method when instantiating object with type '{0}'.", typeof(T));
 
-            return _container.InstantiatePrefabForComponentExplicit<T>(
-                prefab, InjectUtil.CreateArgListExplicit(param));
+            return _container.InstantiatePrefabForComponent<T>(prefab, param);
         }
 
         public virtual T Create(string prefabResourceName, P1 param)
@@ -66,10 +61,9 @@ namespace Zenject
             return Create((GameObject)Resources.Load(prefabResourceName), param);
         }
 
-        public void Validate()
+        public System.Collections.Generic.IEnumerable<ZenjectResolveException> Validate()
         {
-            _container.InjectExplicit(
-                new ValidationMarker(typeof(T)), ValidationUtil.CreateDefaultArgs(typeof(P1)));
+            return _container.ValidateObjectGraph<T>(typeof(P1));
         }
     }
 
@@ -85,8 +79,7 @@ namespace Zenject
             Assert.That(prefab != null,
                "Null prefab given to factory create method when instantiating object with type '{0}'.", typeof(T));
 
-            return _container.InstantiatePrefabForComponentExplicit<T>(
-                prefab, InjectUtil.CreateArgListExplicit(param, param2));
+            return _container.InstantiatePrefabForComponent<T>(prefab, param, param2);
         }
 
         public virtual T Create(string prefabResourceName, P1 param, P2 param2)
@@ -97,10 +90,9 @@ namespace Zenject
             return Create((GameObject)Resources.Load(prefabResourceName), param, param2);
         }
 
-        public void Validate()
+        public System.Collections.Generic.IEnumerable<ZenjectResolveException> Validate()
         {
-            _container.InjectExplicit(
-                new ValidationMarker(typeof(T)), ValidationUtil.CreateDefaultArgs(typeof(P1), typeof(P2)));
+            return _container.ValidateObjectGraph<T>(typeof(P1), typeof(P2));
         }
     }
 
@@ -116,8 +108,7 @@ namespace Zenject
             Assert.That(prefab != null,
                "Null prefab given to factory create method when instantiating object with type '{0}'.", typeof(T));
 
-            return _container.InstantiatePrefabForComponentExplicit<T>(
-                prefab, InjectUtil.CreateArgListExplicit(param, param2, param3));
+            return _container.InstantiatePrefabForComponent<T>(prefab, param, param2, param3);
         }
 
         public virtual T Create(string prefabResourceName, P1 param, P2 param2, P3 param3)
@@ -128,11 +119,9 @@ namespace Zenject
             return Create((GameObject)Resources.Load(prefabResourceName), param, param2, param3);
         }
 
-        public void Validate()
+        public System.Collections.Generic.IEnumerable<ZenjectResolveException> Validate()
         {
-            _container.InjectExplicit(
-                new ValidationMarker(typeof(T)),
-                    ValidationUtil.CreateDefaultArgs(typeof(P1), typeof(P2), typeof(P3)));
+            return _container.ValidateObjectGraph<T>(typeof(P1), typeof(P2), typeof(P3));
         }
     }
 
@@ -148,8 +137,7 @@ namespace Zenject
             Assert.That(prefab != null,
                "Null prefab given to factory create method when instantiating object with type '{0}'.", typeof(T));
 
-            return _container.InstantiatePrefabForComponentExplicit<T>(
-                prefab, InjectUtil.CreateArgListExplicit(param, param2, param3, param4));
+            return _container.InstantiatePrefabForComponent<T>(prefab, param, param2, param3, param4);
         }
 
         public virtual T Create(string prefabResourceName, P1 param, P2 param2, P3 param3, P4 param4)
@@ -160,11 +148,9 @@ namespace Zenject
             return Create((GameObject)Resources.Load(prefabResourceName), param, param2, param3, param4);
         }
 
-        public void Validate()
+        public System.Collections.Generic.IEnumerable<ZenjectResolveException> Validate()
         {
-            _container.InjectExplicit(
-                new ValidationMarker(typeof(T)),
-                ValidationUtil.CreateDefaultArgs(typeof(P1), typeof(P2), typeof(P3), typeof(P4)));
+            return _container.ValidateObjectGraph<T>(typeof(P1), typeof(P2), typeof(P3), typeof(P4));
         }
     }
 }

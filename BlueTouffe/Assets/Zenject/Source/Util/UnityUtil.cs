@@ -1,4 +1,4 @@
-#if !NOT_UNITY3D
+#if !ZEN_NOT_UNITY3D
 
 using System;
 using System.Collections.Generic;
@@ -49,7 +49,7 @@ namespace ModestTree.Util
             }
         }
 
-        public static int GetDepthLevel(Transform transform)
+        static int GetDepthLevel(Transform transform)
         {
             if (transform == null)
             {
@@ -57,39 +57,6 @@ namespace ModestTree.Util
             }
 
             return 1 + GetDepthLevel(transform.parent);
-        }
-
-        public static GameObject GetRootParentOrSelf(GameObject gameObject)
-        {
-            return GetParentsAndSelf(gameObject.transform).Select(x => x.gameObject).LastOrDefault();
-        }
-
-        public static IEnumerable<Transform> GetParents(Transform transform)
-        {
-            if (transform == null)
-            {
-                yield break;
-            }
-
-            foreach (var ancestor in GetParentsAndSelf(transform.parent))
-            {
-                yield return ancestor;
-            }
-        }
-
-        public static IEnumerable<Transform> GetParentsAndSelf(Transform transform)
-        {
-            if (transform == null)
-            {
-                yield break;
-            }
-
-            yield return transform;
-
-            foreach (var ancestor in GetParentsAndSelf(transform.parent))
-            {
-                yield return ancestor;
-            }
         }
 
         public static IEnumerable<Component> GetComponentsInChildrenTopDown(GameObject gameObject, bool includeInactive)
@@ -104,24 +71,6 @@ namespace ModestTree.Util
             return gameObject.GetComponentsInChildren<Component>(includeInactive)
                 .OrderByDescending(x =>
                     x == null ? int.MinValue : GetDepthLevel(x.transform));
-        }
-
-        public static IEnumerable<GameObject> GetDirectChildrenAndSelf(GameObject obj)
-        {
-            yield return obj;
-
-            foreach (Transform child in obj.transform)
-            {
-                yield return child.gameObject;
-            }
-        }
-
-        public static IEnumerable<GameObject> GetDirectChildren(GameObject obj)
-        {
-            foreach (Transform child in obj.transform)
-            {
-                yield return child.gameObject;
-            }
         }
 
         public static IEnumerable<GameObject> GetAllGameObjectsInScene()

@@ -28,7 +28,7 @@ namespace Zenject
             }
         }
 
-        protected abstract IEnumerable<Type> ProvidedTypes
+        protected abstract Type[] ProvidedTypes
         {
             get;
         }
@@ -53,8 +53,7 @@ namespace Zenject
 
             if (!duplicates.IsEmpty())
             {
-                throw Assert.CreateException(
-                    "Found duplicate values in KeyedFactory: {0}", duplicates.Select(x => x.ToString()).Join(", "));
+                Assert.Throw("Found duplicate values in KeyedFactory: {0}", duplicates.Select(x => x.ToString()).Join(", "));
             }
 
             _typeMap = _typePairs.ToDictionary(x => x.First, x => x.Second);
@@ -79,27 +78,28 @@ namespace Zenject
             return keyedType;
         }
 
-        public virtual void Validate()
+        public virtual IEnumerable<ZenjectResolveException> Validate()
         {
             foreach (var constructType in _typeMap.Values)
             {
-                Container.InstantiateExplicit(
-                    constructType, ValidationUtil.CreateDefaultArgs(ProvidedTypes.ToArray()));
+                foreach (var error in _container.ValidateObjectGraph(constructType, ProvidedTypes))
+                {
+                    yield return error;
+                }
             }
         }
 
-        protected static ConditionBinder AddBindingInternal<TDerived>(DiContainer container, TKey key)
+        protected static BindingConditionSetter AddBindingInternal<TDerived>(DiContainer container, TKey key)
             where TDerived : TBase
         {
-            return container.Bind<ModestTree.Util.Tuple<TKey, Type>>()
-                .FromInstance(ModestTree.Util.Tuple.New(key, typeof(TDerived)));
+            return container.Bind<ModestTree.Util.Tuple<TKey, Type>>().ToInstance(ModestTree.Util.Tuple.New(key, typeof(TDerived)));
         }
     }
 
     // Zero parameters
     public class KeyedFactory<TBase, TKey> : KeyedFactoryBase<TBase, TKey>
     {
-        protected override IEnumerable<Type> ProvidedTypes
+        protected override Type[] ProvidedTypes
         {
             get
             {
@@ -117,7 +117,7 @@ namespace Zenject
     // One parameter
     public class KeyedFactory<TBase, TKey, TParam1> : KeyedFactoryBase<TBase, TKey>
     {
-        protected override IEnumerable<Type> ProvidedTypes
+        protected override Type[] ProvidedTypes
         {
             get
             {
@@ -131,7 +131,7 @@ namespace Zenject
                 GetTypeForKey(key),
                 new List<TypeValuePair>()
                 {
-                    InjectUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param1),
                 });
         }
     }
@@ -139,7 +139,7 @@ namespace Zenject
     // Two parameters
     public class KeyedFactory<TBase, TKey, TParam1, TParam2> : KeyedFactoryBase<TBase, TKey>
     {
-        protected override IEnumerable<Type> ProvidedTypes
+        protected override Type[] ProvidedTypes
         {
             get
             {
@@ -153,8 +153,8 @@ namespace Zenject
                 GetTypeForKey(key),
                 new List<TypeValuePair>()
                 {
-                    InjectUtil.CreateTypePair(param1),
-                    InjectUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
                 });
         }
     }
@@ -162,7 +162,7 @@ namespace Zenject
     // Three parameters
     public class KeyedFactory<TBase, TKey, TParam1, TParam2, TParam3> : KeyedFactoryBase<TBase, TKey>
     {
-        protected override IEnumerable<Type> ProvidedTypes
+        protected override Type[] ProvidedTypes
         {
             get
             {
@@ -176,9 +176,9 @@ namespace Zenject
                 GetTypeForKey(key),
                 new List<TypeValuePair>()
                 {
-                    InjectUtil.CreateTypePair(param1),
-                    InjectUtil.CreateTypePair(param2),
-                    InjectUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
                 });
         }
     }
@@ -186,7 +186,7 @@ namespace Zenject
     // Four parameters
     public class KeyedFactory<TBase, TKey, TParam1, TParam2, TParam3, TParam4> : KeyedFactoryBase<TBase, TKey>
     {
-        protected override IEnumerable<Type> ProvidedTypes
+        protected override Type[] ProvidedTypes
         {
             get
             {
@@ -200,10 +200,10 @@ namespace Zenject
                 GetTypeForKey(key),
                 new List<TypeValuePair>()
                 {
-                    InjectUtil.CreateTypePair(param1),
-                    InjectUtil.CreateTypePair(param2),
-                    InjectUtil.CreateTypePair(param3),
-                    InjectUtil.CreateTypePair(param4),
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param4),
                 });
         }
     }

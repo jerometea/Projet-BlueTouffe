@@ -30,7 +30,10 @@ public class TouchPad : MonoBehaviour , IPointerUpHandler {
 	private Touch FakeTouch = new Touch();
 	private bool FakeID;
 
-
+void Start()
+    {
+        TouchAria = new Vector2(Screen.width / 2, Screen.height);
+    }
 	void OnEnable () {
 		startPos = Finger;
 		if (!gameObject.GetComponent<Image> () && UseImage) {

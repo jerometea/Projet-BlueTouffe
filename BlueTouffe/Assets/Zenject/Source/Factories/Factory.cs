@@ -1,160 +1,447 @@
 using System;
 using System.Collections.Generic;
-using ModestTree;
-using System.Linq;
 
 namespace Zenject
 {
     // Zero parameters
-    public class Factory<TValue> : DynamicFactory<TValue>, IFactory<TValue>
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<T> : IValidatableFactory, IFactory<T>
     {
-        // If you were hoping to override this method, use BindFactory<>.ToFactory instead
-        public TValue Create()
+        // Use inject rather than a constructor parameter so that
+        // derived classes aren't also forced to create a constructor
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
         {
-            return CreateInternal(new List<TypeValuePair>());
+            get { return typeof(T); }
         }
 
-        protected sealed override IEnumerable<Type> ParamTypes
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[0]; }
+        }
+
+        protected DiContainer Container
         {
             get
             {
-                yield break;
+                return _container;
             }
+        }
+
+        public virtual T Create()
+        {
+            return _container.Instantiate<T>();
         }
     }
 
     // One parameter
-    public class Factory<TParam1, TValue>
-        : DynamicFactory<TValue>, IFactory<TParam1, TValue>
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TValue> : IValidatableFactory, IFactory<TParam1, TValue>
     {
-        // If you were hoping to override this method, use BindFactory<>.ToFactory instead
-        public TValue Create(TParam1 param)
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
         {
-            return CreateInternal(
-                new List<TypeValuePair>()
-                {
-                    InjectUtil.CreateTypePair(param),
-                });
+            get { return typeof(TValue); }
         }
 
-        protected sealed override IEnumerable<Type> ParamTypes
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1) }; }
+        }
+
+        protected DiContainer Container
         {
             get
             {
-                yield return typeof(TParam1);
+                return _container;
             }
+        }
+
+        public virtual TValue Create(TParam1 param)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param),
+                });
         }
     }
 
     // Two parameters
-    public class Factory<TParam1, TParam2, TValue>
-        : DynamicFactory<TValue>, IFactory<TParam1, TParam2, TValue>
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TValue> : IValidatableFactory, IFactory<TParam1, TParam2, TValue>
     {
-        // If you were hoping to override this method, use BindFactory<>.ToFactory instead
-        public TValue Create(TParam1 param1, TParam2 param2)
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
         {
-            return CreateInternal(
-                new List<TypeValuePair>()
-                {
-                    InjectUtil.CreateTypePair(param1),
-                    InjectUtil.CreateTypePair(param2),
-                });
+            get { return typeof(TValue); }
         }
 
-        protected sealed override IEnumerable<Type> ParamTypes
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2) }; }
+        }
+
+        protected DiContainer Container
         {
             get
             {
-                yield return typeof(TParam1);
-                yield return typeof(TParam2);
+                return _container;
             }
+        }
+
+        public virtual TValue Create(TParam1 param1, TParam2 param2)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                });
         }
     }
 
     // Three parameters
-    public class Factory<TParam1, TParam2, TParam3, TValue>
-        : DynamicFactory<TValue>, IFactory<TParam1, TParam2, TParam3, TValue>
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TParam3, TValue> : IValidatableFactory, IFactory<TParam1, TParam2, TParam3, TValue>
     {
-        // If you were hoping to override this method, use BindFactory<>.ToFactory instead
-        public TValue Create(TParam1 param1, TParam2 param2, TParam3 param3)
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
         {
-            return CreateInternal(
-                new List<TypeValuePair>()
-                {
-                    InjectUtil.CreateTypePair(param1),
-                    InjectUtil.CreateTypePair(param2),
-                    InjectUtil.CreateTypePair(param3),
-                });
+            get { return typeof(TValue); }
         }
 
-        protected sealed override IEnumerable<Type> ParamTypes
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2), typeof(TParam3) }; }
+        }
+
+        protected DiContainer Container
         {
             get
             {
-                yield return typeof(TParam1);
-                yield return typeof(TParam2);
-                yield return typeof(TParam3);
+                return _container;
             }
+        }
+
+        public virtual TValue Create(TParam1 param1, TParam2 param2, TParam3 param3)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                });
         }
     }
 
     // Four parameters
-    public class Factory<TParam1, TParam2, TParam3, TParam4, TValue>
-        : DynamicFactory<TValue>, IFactory<TParam1, TParam2, TParam3, TParam4, TValue>
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TParam3, TParam4, TValue> :
+        IValidatableFactory, IFactory<TParam1, TParam2, TParam3, TParam4, TValue>
     {
-        // If you were hoping to override this method, use BindFactory<>.ToFactory instead
-        public TValue Create(TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
         {
-            return CreateInternal(
-                new List<TypeValuePair>()
-                {
-                    InjectUtil.CreateTypePair(param1),
-                    InjectUtil.CreateTypePair(param2),
-                    InjectUtil.CreateTypePair(param3),
-                    InjectUtil.CreateTypePair(param4),
-                });
+            get { return typeof(TValue); }
         }
 
-        protected sealed override IEnumerable<Type> ParamTypes
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2), typeof(TParam3), typeof(TParam4) }; }
+        }
+
+        protected DiContainer Container
         {
             get
             {
-                yield return typeof(TParam1);
-                yield return typeof(TParam2);
-                yield return typeof(TParam3);
-                yield return typeof(TParam4);
+                return _container;
             }
+        }
+
+        public virtual TValue Create(
+            TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param4),
+                });
         }
     }
 
     // Five parameters
-    public class Factory<TParam1, TParam2, TParam3, TParam4, TParam5, TValue>
-        : DynamicFactory<TValue>, IFactory<TParam1, TParam2, TParam3, TParam4, TParam5, TValue>
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TParam3, TParam4, TParam5, TValue> :
+        IValidatableFactory, IFactory<TParam1, TParam2, TParam3, TParam4, TParam5, TValue>
     {
-        // If you were hoping to override this method, use BindFactory<>.ToFactory instead
-        public TValue Create(TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, TParam5 param5)
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
         {
-            return CreateInternal(
-                new List<TypeValuePair>()
-                {
-                    InjectUtil.CreateTypePair(param1),
-                    InjectUtil.CreateTypePair(param2),
-                    InjectUtil.CreateTypePair(param3),
-                    InjectUtil.CreateTypePair(param4),
-                    InjectUtil.CreateTypePair(param5),
-                });
+            get { return typeof(TValue); }
         }
 
-        protected sealed override IEnumerable<Type> ParamTypes
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2), typeof(TParam3), typeof(TParam4), typeof(TParam5) }; }
+        }
+
+        protected DiContainer Container
         {
             get
             {
-                yield return typeof(TParam1);
-                yield return typeof(TParam2);
-                yield return typeof(TParam3);
-                yield return typeof(TParam4);
-                yield return typeof(TParam5);
+                return _container;
             }
+        }
+
+        public virtual TValue Create(
+            TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, TParam5 param5)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param4),
+                    InstantiateUtil.CreateTypePair(param5),
+                });
+        }
+    }
+
+    // Six parameters
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TValue> :
+        IValidatableFactory, IFactory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TValue>
+    {
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
+        {
+            get { return typeof(TValue); }
+        }
+
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2), typeof(TParam3), typeof(TParam4), typeof(TParam5), typeof(TParam6) }; }
+        }
+
+        protected DiContainer Container
+        {
+            get
+            {
+                return _container;
+            }
+        }
+
+        public virtual TValue Create(
+            TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, TParam5 param5, TParam6 param6)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param4),
+                    InstantiateUtil.CreateTypePair(param5),
+                    InstantiateUtil.CreateTypePair(param6),
+                });
+        }
+    }
+
+    // Seven parameters
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TValue> :
+        IValidatableFactory, IFactory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TValue>
+    {
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
+        {
+            get { return typeof(TValue); }
+        }
+
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2), typeof(TParam3), typeof(TParam4), typeof(TParam5), typeof(TParam6), typeof(TParam7) }; }
+        }
+
+        protected DiContainer Container
+        {
+            get
+            {
+                return _container;
+            }
+        }
+
+        public virtual TValue Create(
+            TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, TParam5 param5, TParam6 param6, TParam7 param7)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param4),
+                    InstantiateUtil.CreateTypePair(param5),
+                    InstantiateUtil.CreateTypePair(param6),
+                    InstantiateUtil.CreateTypePair(param7),
+                });
+        }
+    }
+
+    // Eigth parameters
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TValue> :
+        IValidatableFactory, IFactory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TValue>
+    {
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
+        {
+            get { return typeof(TValue); }
+        }
+
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2), typeof(TParam3), typeof(TParam4), typeof(TParam5), typeof(TParam6), typeof(TParam7), typeof(TParam8) }; }
+        }
+
+        protected DiContainer Container
+        {
+            get
+            {
+                return _container;
+            }
+        }
+
+        public virtual TValue Create(
+            TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, TParam5 param5, TParam6 param6, TParam7 param7, TParam8 param8)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param4),
+                    InstantiateUtil.CreateTypePair(param5),
+                    InstantiateUtil.CreateTypePair(param6),
+                    InstantiateUtil.CreateTypePair(param7),
+                    InstantiateUtil.CreateTypePair(param8),
+                });
+        }
+    }
+
+    // Nine parameters
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TValue> :
+        IValidatableFactory, IFactory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TValue>
+    {
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
+        {
+            get { return typeof(TValue); }
+        }
+
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2), typeof(TParam3), typeof(TParam4), typeof(TParam5), typeof(TParam6), typeof(TParam7), typeof(TParam8), typeof(TParam9) }; }
+        }
+
+        protected DiContainer Container
+        {
+            get
+            {
+                return _container;
+            }
+        }
+
+        public virtual TValue Create(
+            TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, TParam5 param5, TParam6 param6, TParam7 param7, TParam8 param8, TParam9 param9)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param4),
+                    InstantiateUtil.CreateTypePair(param5),
+                    InstantiateUtil.CreateTypePair(param6),
+                    InstantiateUtil.CreateTypePair(param7),
+                    InstantiateUtil.CreateTypePair(param8),
+                    InstantiateUtil.CreateTypePair(param9),
+                });
+        }
+    }
+
+    // Ten parameters
+    [System.Diagnostics.DebuggerStepThrough]
+    public class Factory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TValue> :
+        IValidatableFactory, IFactory<TParam1, TParam2, TParam3, TParam4, TParam5, TParam6, TParam7, TParam8, TParam9, TParam10, TValue>
+    {
+        [Inject]
+        DiContainer _container = null;
+
+        public Type ConstructedType
+        {
+            get { return typeof(TValue); }
+        }
+
+        public Type[] ProvidedTypes
+        {
+            get { return new Type[] { typeof(TParam1), typeof(TParam2), typeof(TParam3), typeof(TParam4), typeof(TParam5), typeof(TParam6), typeof(TParam7), typeof(TParam8), typeof(TParam9), typeof(TParam10) }; }
+        }
+
+        protected DiContainer Container
+        {
+            get
+            {
+                return _container;
+            }
+        }
+
+        public virtual TValue Create(
+            TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, TParam5 param5, TParam6 param6, TParam7 param7, TParam8 param8, TParam9 param9, TParam10 param10)
+        {
+            return _container.InstantiateExplicit<TValue>(
+                new List<TypeValuePair>()
+                {
+                    InstantiateUtil.CreateTypePair(param1),
+                    InstantiateUtil.CreateTypePair(param2),
+                    InstantiateUtil.CreateTypePair(param3),
+                    InstantiateUtil.CreateTypePair(param4),
+                    InstantiateUtil.CreateTypePair(param5),
+                    InstantiateUtil.CreateTypePair(param6),
+                    InstantiateUtil.CreateTypePair(param7),
+                    InstantiateUtil.CreateTypePair(param8),
+                    InstantiateUtil.CreateTypePair(param9),
+                    InstantiateUtil.CreateTypePair(param10),
+                });
         }
     }
 }

@@ -9,10 +9,11 @@ public class Weapon : MonoBehaviour {
     public int weap = 1; // 1 - snip, 2 - shotgun, 3 - close combat
     Transform shooter;
     public GameObject proj;
-    public TouchPad _touchBullet;
+    GameObject _touchBulletGO;
+    TouchPad _touchBullet;
 
-	// Use this for initialization1
-	void Start () {
+    // Use this for initialization1
+    void Start () {
         timeToFire = 0;
 
         shooter = transform.FindChild( "Shooter" );
@@ -20,9 +21,8 @@ public class Weapon : MonoBehaviour {
         {
             Debug.LogError( "No shooter detected" );
         }
-        _touchBullet.TouchAria = new Vector2(Screen.width / 2, Screen.height);
-
-
+        _touchBulletGO = GameObject.Find("Touchpad Bullet");
+        _touchBullet = _touchBulletGO.GetComponent<TouchPad>();
     }
 
     // Update is called once per frame

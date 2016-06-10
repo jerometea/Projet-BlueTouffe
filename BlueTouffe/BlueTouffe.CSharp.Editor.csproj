@@ -109,21 +109,12 @@
     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapLayerEditor.cs" />
     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapPostprocessor.cs" />
     <Compile Include="Assets\IsoTools\Tiled\Internal\Editor\TiledMapTilesetEditor.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\EditorWindow\EditorWindowCompositionRoot.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\EditorWindow\EditorWindowFacade.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\EditorWindow\GuiRenderableManager.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\EditorWindow\IGuiRenderable.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\EditorWindow\MonoEditorInstaller.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\Editors\CompositionRootEditor.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\Editors\EditorWindowCompositionRootEditor.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\Editors\GameObjectCompositionRootEditor.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\Editors\ProjectCompositionRootEditor.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\Editors\SceneCompositionRootEditor.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\Editors\SceneDecoratorCompositionRootEditor.cs" />
     <Compile Include="Assets\Zenject\Source\Editor\ObjectGraphVisualizer.cs" />
+    <Compile Include="Assets\Zenject\Source\Editor\SceneCompositionRootEditor.cs" />
+    <Compile Include="Assets\Zenject\Source\Editor\SceneDecoratorCompositionRootEditor.cs" />
+    <Compile Include="Assets\Zenject\Source\Editor\UnityEditorUtil.cs" />
     <Compile Include="Assets\Zenject\Source\Editor\UnityInspectorListEditor.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\ZenMenuItems.cs" />
-    <Compile Include="Assets\Zenject\Source\Editor\ZenUnityEditorUtil.cs" />
+    <Compile Include="Assets\Zenject\Source\Editor\ZenEditorUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Android Bluetooth Multiplayer - ReadMe.txt" />
@@ -132,10 +123,10 @@
     <None Include="Assets\IsoTools\README.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Zenject\LICENSE.txt" />
-    <None Include="Assets\Zenject\OptionalExtras\SampleGame1 (Beginner)\Media\Fonts\Space.txt" />
-    <None Include="Assets\Zenject\OptionalExtras\SampleGame1 (Beginner)\Media\Imported\Shaders\AddSmooth_Layer.shader" />
-    <None Include="Assets\Zenject\OptionalExtras\SampleGame1 (Beginner)\Media\Imported\Shaders\Add_Layer.shader" />
-    <None Include="Assets\Zenject\OptionalExtras\SampleGame1 (Beginner)\Media\Imported\Shaders\Particle Alpha Blend_IgnoreFog.shader" />
+    <None Include="Assets\Zenject\OptionalExtras\SampleGame\Media\Fonts\Space.txt" />
+    <None Include="Assets\Zenject\OptionalExtras\SampleGame\Media\Imported\Shaders\AddSmooth_Layer.shader" />
+    <None Include="Assets\Zenject\OptionalExtras\SampleGame\Media\Imported\Shaders\Add_Layer.shader" />
+    <None Include="Assets\Zenject\OptionalExtras\SampleGame\Media\Imported\Shaders\Particle Alpha Blend_IgnoreFog.shader" />
     <None Include="Assets\Zenject\Version.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

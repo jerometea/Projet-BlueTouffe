@@ -6,10 +6,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-#if !NOT_UNITY3D
-using UnityEngine;
-#endif
-
 namespace ModestTree.Util
 {
     public static class ReflectionUtil
@@ -41,7 +37,7 @@ namespace ModestTree.Util
             {
                 if (obj != null)
                 {
-                    Assert.That(elementType.IsAssignableFrom(obj.GetType()),
+                    Assert.That(obj.GetType().DerivesFromOrEqual(elementType),
                         "Wrong type when creating generic list, expected something assignable from '"+ elementType +"', but found '" + obj.GetType() + "'");
                 }
 
@@ -78,132 +74,6 @@ namespace ModestTree.Util
             }
 
             return toList;
-        }
-
-        public static IEnumerable<IMemberInfo> GetFieldsAndProperties<T>(BindingFlags flags)
-        {
-            return GetFieldsAndProperties(typeof(T), flags);
-        }
-
-        public static IEnumerable<IMemberInfo> GetFieldsAndProperties(Type type, BindingFlags flags)
-        {
-            foreach (var propInfo in type.GetProperties(flags))
-            {
-                yield return new PropertyMemberInfo(propInfo);
-            }
-
-            foreach (var fieldInfo in type.GetFields(flags))
-            {
-                yield return new FieldMemberInfo(fieldInfo);
-            }
-        }
-
-        public interface IMemberInfo
-        {
-            Type MemberType
-            {
-                get;
-            }
-
-            string MemberName
-            {
-                get;
-            }
-
-            object GetValue(object instance);
-            void SetValue(object instance, object value);
-        }
-
-        public class PropertyMemberInfo : IMemberInfo
-        {
-            PropertyInfo _propInfo;
-
-            public PropertyMemberInfo(PropertyInfo propInfo)
-            {
-                _propInfo = propInfo;
-            }
-
-            public Type MemberType
-            {
-                get
-                {
-                    return _propInfo.PropertyType;
-                }
-            }
-
-            public string MemberName
-            {
-                get
-                {
-                    return _propInfo.Name;
-                }
-            }
-
-            public object GetValue(object instance)
-            {
-                try
-                {
-#if NOT_UNITY3D
-                    return _propInfo.GetValue(instance, null);
-#else
-                    if (Application.platform == RuntimePlatform.WebGLPlayer)
-                    {
-                        // GetValue() doesn't work on webgl for some reason
-                        // This is a bit slower though so only do this on webgl
-                        return _propInfo.GetGetMethod().Invoke(instance, null);
-                    }
-                    else
-                    {
-                        return _propInfo.GetValue(instance, null);
-                    }
-#endif
-                }
-                catch (Exception e)
-                {
-                    throw new Exception("Error occurred while accessing property '{0}'".Fmt(_propInfo.Name), e);
-                }
-            }
-
-            public void SetValue(object instance, object value)
-            {
-                _propInfo.SetValue(instance, value, null);
-            }
-        }
-
-        public class FieldMemberInfo : IMemberInfo
-        {
-            FieldInfo _fieldInfo;
-
-            public FieldMemberInfo(FieldInfo fieldInfo)
-            {
-                _fieldInfo = fieldInfo;
-            }
-
-            public Type MemberType
-            {
-                get
-                {
-                    return _fieldInfo.FieldType;
-                }
-            }
-
-            public string MemberName
-            {
-                get
-                {
-                    return _fieldInfo.Name;
-                }
-            }
-
-            public object GetValue(object instance)
-            {
-                return _fieldInfo.GetValue(instance);
-            }
-
-            public void SetValue(object instance, object value)
-            {
-                _fieldInfo.SetValue(instance, value);
-            }
         }
     }
 }
