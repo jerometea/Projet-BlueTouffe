@@ -63,19 +63,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\Reporter\MultiKeyDictionary.cs" />
-    <Compile Include="Assets\Plugins\Reporter\Reporter.cs" />
-    <Compile Include="Assets\Plugins\Reporter\ReporterGUI.cs" />
-    <Compile Include="Assets\Plugins\Reporter\ReporterMessageReceiver.cs" />
-    <Compile Include="Assets\Plugins\Reporter\Test\Rotate.cs" />
-    <Compile Include="Assets\Plugins\Reporter\Test\TestReporter.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothDemoGuiBase.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothDemoMenu.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothDiscoveryDemoGui.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothExamplesTools.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothFileTransferDemoGui.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothMultiplayerDemoGui.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\CameraFade.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\FileTransfer.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\NetworkTransformInterpolation.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\TestActor.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Source\AndroidBluetoothMultiplayer.JavaEvents.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Source\AndroidBluetoothMultiplayer.JavaMethods.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Source\AndroidBluetoothMultiplayer.Unity.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Source\AndroidJavaUtilities.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Source\BluetoothDevice.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Source\BluetoothDeviceClass.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Source\BluetoothMultiplayerMode.cs" />
+    <Compile Include="Assets\Plugins\AndroidBluetoothMultiplayer\Source\BluetoothNotEnabledException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Android Bluetooth Multiplayer - ReadMe.txt" />
-    <None Include="Assets\AndroidBluetoothMultiplayer\Demos\Assets\Graphics\Particle Alpha Blend.shader" />
     <None Include="Assets\IsoTools\CHANGELOG.txt" />
     <None Include="Assets\IsoTools\README.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\AndroidBluetoothMultiplayer\Demos\Assets\Graphics\Particle Alpha Blend.shader" />
     <None Include="Assets\StreamingAssets\build_info.txt" />
     <None Include="Assets\Zenject\LICENSE.txt" />
     <None Include="Assets\Zenject\OptionalExtras\SampleGame\Media\Fonts\Space.txt" />

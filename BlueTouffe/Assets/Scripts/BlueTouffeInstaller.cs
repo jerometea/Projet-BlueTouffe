@@ -27,8 +27,6 @@ public class BlueTouffeInstaller : MonoInstaller {
 
         Container.Bind<ITickable>().ToSingle<ZombieSpawner>();
         Container.Bind<ZombieSpawner>().ToSingle();
-        //Container.BindGameObjectFactory<Zombie.Factory>(_settings.Zombie.Zombie, "Zombie");
-
 
     }
 
