@@ -12,12 +12,13 @@ public class IsoMovement : MonoBehaviour {
 
     NetworkView _networkView;
 
-
+    GameObject _joystickGameObj;
     GameObject _camera;
     // Use this for initialization
 
     void Start () {
-        _Joystick = (Joystick)FindObjectOfType(typeof(Joystick));
+        _joystickGameObj = GameObject.Find("Joystick left");
+        _Joystick = _joystickGameObj.GetComponent<Joystick>();
         _camera = GameObject.Find("MainCamera");
     }
 

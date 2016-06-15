@@ -1,0 +1,2146 @@
+fileFormatVersion: 2
+guid: b02be0460d09c074da5bed0824531510
+timeCreated: 1463556928
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SgF43Wd_0
+    21300002: SgF43Wd_1
+    21300004: SgF43Wd_2
+    21300006: SgF43Wd_3
+    21300008: SgF43Wd_4
+    21300010: SgF43Wd_5
+    21300012: SgF43Wd_6
+    21300014: SgF43Wd_8
+    21300016: SgF43Wd_11
+    21300018: SgF43Wd_13
+    21300020: SgF43Wd_15
+    21300022: SgF43Wd_17
+    21300024: SgF43Wd_18
+    21300026: SgF43Wd_19
+    21300028: SgF43Wd_20
+    21300030: SgF43Wd_22
+    21300032: SgF43Wd_23
+    21300034: SgF43Wd_26
+    21300036: SgF43Wd_27
+    21300038: SgF43Wd_28
+    21300040: SgF43Wd_29
+    21300042: SgF43Wd_30
+    21300044: SgF43Wd_32
+    21300046: SgF43Wd_33
+    21300048: SgF43Wd_35
+    21300050: SgF43Wd_38
+    21300052: SgF43Wd_40
+    21300054: SgF43Wd_42
+    21300056: SgF43Wd_44
+    21300058: SgF43Wd_46
+    21300060: SgF43Wd_48
+    21300062: SgF43Wd_50
+    21300064: SgF43Wd_52
+    21300066: SgF43Wd_54
+    21300068: SgF43Wd_56
+    21300070: SgF43Wd_58
+    21300072: SgF43Wd_60
+    21300074: SgF43Wd_62
+    21300076: SgF43Wd_64
+    21300078: SgF43Wd_66
+    21300080: SgF43Wd_68
+    21300082: SgF43Wd_69
+    21300084: SgF43Wd_72
+    21300086: SgF43Wd_74
+    21300088: SgF43Wd_76
+    21300090: SgF43Wd_77
+    21300092: SgF43Wd_78
+    21300094: SgF43Wd_79
+    21300096: SgF43Wd_81
+    21300098: SgF43Wd_82
+    21300100: SgF43Wd_83
+    21300102: SgF43Wd_84
+    21300104: SgF43Wd_86
+    21300106: SgF43Wd_88
+    21300108: SgF43Wd_90
+    21300110: SgF43Wd_92
+    21300112: SgF43Wd_94
+    21300114: SgF43Wd_101
+    21300116: SgF43Wd_106
+    21300118: SgF43Wd_107
+    21300120: SgF43Wd_108
+    21300122: SgF43Wd_110
+    21300124: SgF43Wd_111
+    21300126: SgF43Wd_112
+    21300128: SgF43Wd_113
+    21300130: SgF43Wd_115
+    21300132: SgF43Wd_117
+    21300134: SgF43Wd_120
+    21300136: SgF43Wd_122
+    21300138: SgF43Wd_124
+    21300140: SgF43Wd_125
+    21300142: SgF43Wd_126
+    21300144: SgF43Wd_127
+    21300146: SgF43Wd_128
+    21300148: SgF43Wd_129
+    21300150: SgF43Wd_131
+    21300152: SgF43Wd_132
+    21300154: SgF43Wd_142
+    21300156: SgF43Wd_143
+    21300158: SgF43Wd_144
+    21300160: SgF43Wd_145
+    21300162: SgF43Wd_146
+    21300164: SgF43Wd_147
+    21300166: SgF43Wd_148
+    21300168: SgF43Wd_149
+    21300170: SgF43Wd_150
+    21300172: SgF43Wd_151
+    21300174: SgF43Wd_152
+    21300176: SgF43Wd_153
+    21300178: SgF43Wd_154
+    21300180: SgF43Wd_155
+    21300182: SgF43Wd_156
+    21300184: SgF43Wd_157
+    21300186: SgF43Wd_158
+    21300188: SgF43Wd_159
+    21300190: SgF43Wd_160
+    21300192: SgF43Wd_161
+    21300194: SgF43Wd_162
+    21300196: SgF43Wd_163
+    21300198: SgF43Wd_166
+    21300200: SgF43Wd_167
+    21300202: SgF43Wd_168
+    21300204: SgF43Wd_169
+    21300206: SgF43Wd_170
+    21300208: SgF43Wd_172
+    21300210: SgF43Wd_173
+    21300212: SgF43Wd_174
+    21300214: SgF43Wd_175
+    21300216: SgF43Wd_176
+    21300218: SgF43Wd_177
+    21300220: SgF43Wd_178
+    21300222: SgF43Wd_179
+    21300224: SgF43Wd_183
+    21300226: SgF43Wd_188
+    21300228: SgF43Wd_190
+    21300230: SgF43Wd_192
+    21300232: SgF43Wd_195
+    21300234: SgF43Wd_196
+    21300236: SgF43Wd_199
+    21300238: SgF43Wd_201
+    21300240: SgF43Wd_202
+    21300242: SgF43Wd_204
+    21300244: SgF43Wd_205
+    21300246: SgF43Wd_206
+    21300248: SgF43Wd_207
+    21300250: SgF43Wd_208
+    21300252: SgF43Wd_209
+    21300254: SgF43Wd_210
+    21300256: SgF43Wd_211
+    21300258: SgF43Wd_212
+    21300260: SgF43Wd_213
+    21300262: SgF43Wd_214
+    21300264: SgF43Wd_215
+    21300266: SgF43Wd_216
+    21300268: SgF43Wd_219
+    21300270: SgF43Wd_221
+    21300272: SgF43Wd_224
+    21300274: SgF43Wd_226
+    21300276: SgF43Wd_227
+    21300278: SgF43Wd_229
+    21300280: SgF43Wd_230
+    21300282: SgF43Wd_231
+    21300284: SgF43Wd_232
+    21300286: SgF43Wd_233
+    21300288: SgF43Wd_234
+    21300290: SgF43Wd_235
+    21300292: SgF43Wd_236
+    21300294: SgF43Wd_237
+    21300296: SgF43Wd_238
+    21300298: SgF43Wd_239
+    21300300: SgF43Wd_240
+    21300302: SgF43Wd_242
+    21300304: SgF43Wd_243
+    21300306: SgF43Wd_244
+    21300308: SgF43Wd_245
+    21300310: SgF43Wd_246
+    21300312: SgF43Wd_247
+    21300314: SgF43Wd_248
+    21300316: SgF43Wd_249
+    21300318: SgF43Wd_250
+    21300320: SgF43Wd_251
+    21300322: SgF43Wd_252
+    21300324: SgF43Wd_253
+    21300326: SgF43Wd_260
+    21300328: SgF43Wd_261
+    21300330: SgF43Wd_262
+    21300332: SgF43Wd_263
+    21300334: SgF43Wd_264
+    21300336: SgF43Wd_265
+    21300338: SgF43Wd_266
+    21300340: SgF43Wd_267
+    21300342: SgF43Wd_268
+    21300344: SgF43Wd_269
+    21300346: SgF43Wd_270
+    21300348: SgF43Wd_271
+    21300350: SgF43Wd_272
+    21300352: SgF43Wd_273
+    21300354: SgF43Wd_274
+    21300356: SgF43Wd_275
+    21300358: SgF43Wd_276
+    21300360: SgF43Wd_277
+    21300362: SgF43Wd_278
+    21300364: SgF43Wd_279
+    21300366: SgF43Wd_288
+    21300368: SgF43Wd_289
+    21300370: SgF43Wd_291
+    21300372: SgF43Wd_293
+    21300374: SgF43Wd_295
+    21300376: SgF43Wd_297
+    21300378: SgF43Wd_300
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SgF43Wd_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1267
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1268
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1268
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_3
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 1268
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_4
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1268
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_5
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1268
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_6
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 1281
+        width: 63
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_8
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1277
+        width: 63
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_11
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1280
+        width: 69
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_13
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1280
+        width: 66
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_15
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1280
+        width: 69
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_17
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 1281
+        width: 65
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_18
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1197
+        width: 47
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_19
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1209
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_20
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1197
+        width: 52
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_22
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1195
+        width: 59
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_23
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1195
+        width: 62
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_26
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1105
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_27
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1107
+        width: 79
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_28
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1108
+        width: 53
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_29
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 1109
+        width: 47
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_30
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1106
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_32
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1106
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_33
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1135
+        width: 96
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_35
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1121
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_38
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1047
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_40
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1045
+        width: 42
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_42
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1040
+        width: 51
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_44
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1038
+        width: 50
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_46
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1036
+        width: 49
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_48
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1038
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_50
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1039
+        width: 49
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_52
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1036
+        width: 50
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_54
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1028
+        width: 46
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_56
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1034
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_58
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 1033
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_60
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1034
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_62
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1033
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_64
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 973
+        width: 43
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_66
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 970
+        width: 42
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_68
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 971
+        width: 40
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_69
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 955
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_72
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 966
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_74
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 962
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_76
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 965
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_77
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 968
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_78
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 968
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_79
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 966
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_81
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 962
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_82
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 963
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_83
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 965
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_84
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 892
+        width: 47
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_86
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 892
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_88
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 896
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_90
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 893
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_92
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 890
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_94
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 883
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_101
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 891
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_106
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 888
+        width: 48
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_107
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 888
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_108
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 887
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_110
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 890
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_111
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 890
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_112
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 891
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_113
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 827
+        width: 46
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_115
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 824
+        width: 47
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_117
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 822
+        width: 46
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_120
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 814
+        width: 44
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_122
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 822
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_124
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 820
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_125
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 821
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_126
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 825
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_127
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 824
+        width: 36
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_128
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 824
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_129
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 820
+        width: 56
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_131
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 827
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_132
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 827
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_142
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 768
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_143
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 777
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_144
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 772
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_145
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 766
+        width: 53
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_146
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 767
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_147
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 766
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_148
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 779
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_149
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 765
+        width: 39
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_150
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 706
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_151
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 718
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_152
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 708
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_153
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 705
+        width: 40
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_154
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 705
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_155
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 705
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_156
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 703
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_157
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 703
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_158
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 703
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_159
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 704
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_160
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 718
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_161
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 713
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_162
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 702
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_163
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 707
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_166
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 595
+        width: 16
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_167
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 593
+        width: 16
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_168
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 594
+        width: 16
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_169
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 593
+        width: 16
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_170
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 591
+        width: 16
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_172
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 590
+        width: 21
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_173
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 614
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_174
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 615
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_175
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 615
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_176
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 616
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_177
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 617
+        width: 41
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_178
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 617
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_179
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 617
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_183
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 595
+        width: 18
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_188
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 524
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_190
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 523
+        width: 59
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_192
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 523
+        width: 60
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_195
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 522
+        width: 64
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_196
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 521
+        width: 60
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_199
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 516
+        width: 67
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_201
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 510
+        width: 59
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_202
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 419
+        width: 19
+        height: 59
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_204
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 419
+        width: 19
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_205
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 415
+        width: 19
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_206
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 417
+        width: 19
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_207
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 417
+        width: 19
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_208
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 416
+        width: 19
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_209
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 407
+        width: 21
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_210
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 428
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_211
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 428
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_212
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 428
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_213
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 428
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_214
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 428
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_215
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 428
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_216
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 428
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_219
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 340
+        width: 65
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_221
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 337
+        width: 65
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_224
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 334
+        width: 72
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_226
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 336
+        width: 74
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_227
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 330
+        width: 65
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_229
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 246
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_230
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 248
+        width: 62
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_231
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 291
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_232
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 251
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_233
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 248
+        width: 66
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_234
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 269
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_235
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 270
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_236
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 247
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_237
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 252
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_238
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 176
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_239
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 176
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_240
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 181
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_242
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 185
+        width: 44
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_243
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 186
+        width: 44
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_244
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 185
+        width: 44
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_245
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 185
+        width: 44
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_246
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 185
+        width: 44
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_247
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 185
+        width: 44
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_248
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 183
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_249
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 183
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_250
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 183
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_251
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 183
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_252
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 183
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_253
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 183
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_260
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 187
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_261
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 110
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_262
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 110
+        width: 12
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_263
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 110
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_264
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 108
+        width: 8
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_265
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 108
+        width: 11
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_266
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 108
+        width: 12
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_267
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 105
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_268
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 104
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_269
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 102
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_270
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 102
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_271
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 102
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_272
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 104
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_273
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 106
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_274
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 107
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_275
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 107
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_276
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 107
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_277
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 107
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_278
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 107
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_279
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 107
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_288
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 44
+        width: 54
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_289
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 55
+        width: 54
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_291
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 44
+        width: 55
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_293
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 44
+        width: 54
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_295
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 42
+        width: 54
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_297
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 42
+        width: 53
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SgF43Wd_300
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 43
+        width: 62
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

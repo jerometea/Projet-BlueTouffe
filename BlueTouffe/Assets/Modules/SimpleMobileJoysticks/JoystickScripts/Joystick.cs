@@ -19,9 +19,15 @@ public class Joystick : MonoBehaviour , IPointerUpHandler , IDragHandler {
 	private Touch TouchOnJoystick;
 	private int ID;
 
+    void Start()
+    {
+        TouchAria = new Vector2(Screen.width /2, Screen.height*2);
+    }
+
 	/// <summary>
 	/// If using mouse input.
 	/// </summary>
+    /// 
 	private Touch FakeTouch = new Touch();
 	private bool FakeID;
     void OnEnable () {

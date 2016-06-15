@@ -279,6 +279,7 @@
     <Compile Include="Assets\Modules\Zenject\Source\Util\SceneDecoratorCompositionRoot.cs" />
     <Compile Include="Assets\Modules\Zenject\Source\Util\UnityUtil.cs" />
     <Compile Include="Assets\Modules\Zenject\Source\Util\ZenjectAutoBinding.cs" />
+    <Compile Include="Assets\RPB.cs" />
     <Compile Include="Assets\Scripts\BlueTouffeInstaller.cs" />
     <Compile Include="Assets\Scripts\ClickOnGo.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
@@ -291,6 +292,9 @@
     <Compile Include="Assets\Scripts\MultiplayerTest.cs" />
     <Compile Include="Assets\Scripts\PlayerDisplayScript.cs" />
     <Compile Include="Assets\Scripts\ZombieSpawner.cs" />
+    <Compile Include="Assets\char mob from thibaud\char from thibaud\CharHealth.cs" />
+    <Compile Include="Assets\char mob from thibaud\char from thibaud\ProjController.cs" />
+    <Compile Include="Assets\char mob from thibaud\char from thibaud\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Android Bluetooth Multiplayer - ReadMe.txt" />
