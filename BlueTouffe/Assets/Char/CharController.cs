@@ -126,7 +126,7 @@ public class CharController : MonoBehaviour {
             transform.eulerAngles = new Vector2( 0, 0 );
         }
 
-        _cam.transform.position = new Vector3( transform.position.x, transform.position.y, transform.position.z - 1 );
+       // _cam.transform.position = new Vector3( transform.position.x, transform.position.y, transform.position.z - 1 );
     }
 
     void Ressurection()

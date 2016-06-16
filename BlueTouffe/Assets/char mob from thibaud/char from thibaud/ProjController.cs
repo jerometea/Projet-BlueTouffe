@@ -20,8 +20,18 @@ public class ProjController : MonoBehaviour {
 
     public void FireInTheHole(Vector2 direction)
     {
-        CharController CharC = GameObject.Find("Char from thibaud").GetComponent<CharController>();
+        Debug.Log("direction : " + direction);
+        GameObject charecter = GameObject.Find("Char");
+        Debug.Log("characterrr object" + charecter);
+
         Rigidbody2D rigi2D = GetComponent<Rigidbody2D>();
+        if ( rigi2D == null ) Debug.Log("rigi body 2d is null");
+        Debug.Log("rigidbody 2D : " + rigi2D);
+
+        //CharController CharC = GameObject.Find("Char").GetComponent<CharController>();
+        //if ( CharC == null ) Debug.Log("char is null");
+        //Debug.Log("character : " + CharC);
+
         rigi2D.velocity = direction / (float)(Math.Sqrt(direction.x * direction.x + direction.y * direction.y) / 100);
     }
 

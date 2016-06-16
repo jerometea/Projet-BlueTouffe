@@ -13,6 +13,8 @@ public class Weapon : MonoBehaviour {
     GameObject _joystickGameObj;
     Joystick _Joystick;
 
+    NetworkView _network;
+
     // Use this for initialization1
     void Start () {
         timeToFire = 0;
@@ -25,6 +27,8 @@ public class Weapon : MonoBehaviour {
 
         _joystickGameObj = GameObject.Find("Joystick right");
         _Joystick = _joystickGameObj.GetComponent<Joystick>();
+
+        _network = GetComponent<NetworkView>();
     }
 	
 	// Update is called once per frame
@@ -34,7 +38,7 @@ public class Weapon : MonoBehaviour {
 
 
             timeToFire++;
-            if( x != 0 || y != 0 )
+            if( (x != 0 || y != 0) && _network.isMine)
             {
                 if( fireRate == 00 )
                 {
@@ -82,19 +86,19 @@ public class Weapon : MonoBehaviour {
     void Shoot(float x, float y)
     {
         Vector2 shooterPosition = new Vector2(shooter.position.x, shooter.position.y);
-        GameObject proj1 = Instantiate( proj, shooterPosition, shooter.rotation ) as GameObject;
+        GameObject proj1 = Network.Instantiate( proj, shooterPosition, shooter.rotation,1 ) as GameObject;
         proj1.GetComponent<ProjController>().FireInTheHole( _Joystick.JoystickInput);
 
         if( weap == 2 )
         {
             Vector2 target2 = new Vector2( x, y );
             target2 = Quaternion.Euler( 0, 0, 10 ) * target2;
-            GameObject proj2 = Instantiate( proj, shooterPosition, shooter.rotation ) as GameObject;
+            GameObject proj2 = Network.Instantiate( proj, shooterPosition, shooter.rotation,1 ) as GameObject;
             proj2.GetComponent<ProjController>().FireInTheHole( target2 );
 
             Vector2 target3 = new Vector2( x, y );
             target3 = Quaternion.Euler( 0, 0, -10 ) * target3;
-            GameObject proj3 = Instantiate( proj, shooterPosition, shooter.rotation ) as GameObject;
+            GameObject proj3 = Network.Instantiate( proj, shooterPosition, shooter.rotation,1 ) as GameObject;
             proj3.GetComponent<ProjController>().FireInTheHole( target3 );
         }
     }
