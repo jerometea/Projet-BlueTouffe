@@ -3,15 +3,13 @@ using System.Collections;
 
 public class HealthEnemy : MonoBehaviour {
 
-    int MaxHealth;
-    int Health;
+    int _maxHealth = 30;
+    int _health = 30;
     bool isDead;
     Animator anim;
 
 	// Use this for initialization
 	void Start () {
-        MaxHealth = 30;
-        Health = MaxHealth;
         anim = GetComponent< Animator > ();
     }
 	
@@ -22,17 +20,20 @@ public class HealthEnemy : MonoBehaviour {
 
     public void ReceiveDamage(int damage)
     {
+        if( damage < 0 ) return;
+
         if(isDead)
         {
             Dead();
         }
-        else if(Health <= 0 || Health - damage <= 0 )
+        else if(_health <= 0 || _health - damage <= 0 )
         {
             Dead();
+            _health = 0;
         }
         else
         {
-            Health = Health - damage;
+            _health = _health - damage;
         }
 
     }
@@ -40,12 +41,22 @@ public class HealthEnemy : MonoBehaviour {
     void Dead()
     {
         isDead = true;
-        anim.SetBool( "IsDead", true );
         gameObject.layer = 0;
+        if( anim != null ) anim.SetBool( "IsDead", true );
     }
 
     public bool IsDead
     {
         get { return isDead; }
+    }
+
+    public int Health
+    {
+        get { return _health; }
+    }
+
+    public int MaxHealth
+    {
+        get { return _maxHealth; }
     }
 }
