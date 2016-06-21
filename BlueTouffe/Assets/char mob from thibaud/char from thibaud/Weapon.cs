@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Weapon : MonoBehaviour {
+public class Weapon : MonoBehaviour
+{
 
     public int fireRate = 0;
     public LayerMask ToHit;
@@ -13,43 +14,42 @@ public class Weapon : MonoBehaviour {
     GameObject _joystickGameObj;
     Joystick _Joystick;
 
-    NetworkView _network;
-
     // Use this for initialization1
-    void Start () {
+    void Start()
+    {
         timeToFire = 0;
 
-        shooter = transform.FindChild( "Shooter" );
-        if(shooter == null )
+        shooter = transform.FindChild("Shooter");
+        if ( shooter == null )
         {
-            Debug.LogError( "No shooter detected" );
+            Debug.LogError("No shooter detected");
         }
 
         _joystickGameObj = GameObject.Find("Joystick right");
         _Joystick = _joystickGameObj.GetComponent<Joystick>();
-
-        _network = GetComponent<NetworkView>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         float x = _Joystick.JoystickInput.x;
         float y = _Joystick.JoystickInput.y;
 
-
+        if ( gameObject.GetComponent<Animator>().GetBool("isShooting") )
+        {
             timeToFire++;
-            if( (x != 0 || y != 0) && _network.isMine)
+            if ( x != 0 || y != 0 )
             {
-                if( fireRate == 00 )
+                if ( fireRate == 00 )
                 {
-                    AdaptInput( x, y );
+                    AdaptInput(x, y);
                 }
-                else if( timeToFire % fireRate == 0 || timeToFire == 0 )
+                else if ( timeToFire % fireRate == 0 || timeToFire == 0 )
                 {
-                    AdaptInput( x, y );
+                    AdaptInput(x, y);
                 }
             }
-
+        }
     }
 
     void AdaptInput( float x, float y )
@@ -58,48 +58,48 @@ public class Weapon : MonoBehaviour {
         float modifiedY = y;
 
         //Distance and angle parameter
-        if( x != 0 && y != 0 )
+        if ( x != 0 && y != 0 )
         {
-            if(weap != 1)
+            if ( weap != 1 )
             {
                 modifiedX = modifiedX / 1.5f;
                 modifiedY = modifiedY / 1.5f;
             }
         }
 
-        if( weap == 2 )
+        if ( weap == 2 )
         {
             modifiedX = modifiedX / 1.5f;
             modifiedY = modifiedY / 1.5f;
         }
-        else if( weap == 3 )
+        else if ( weap == 3 )
         {
             modifiedX = modifiedX / 5;
             modifiedY = modifiedY / 5;
         }
 
         //send modified parameter
-        Shoot( modifiedX, modifiedY );
-   }
+        Shoot(modifiedX, modifiedY);
+    }
 
 
-    void Shoot(float x, float y)
+    void Shoot( float x, float y )
     {
         Vector2 shooterPosition = new Vector2(shooter.position.x, shooter.position.y);
-        GameObject proj1 = Network.Instantiate( proj, shooterPosition, shooter.rotation,1 ) as GameObject;
-        proj1.GetComponent<ProjController>().FireInTheHole( _Joystick.JoystickInput);
+        GameObject proj1 = Network.Instantiate(proj, shooterPosition, shooter.rotation, 1) as GameObject;
+        proj1.GetComponent<ProjController>().FireInTheHole(_Joystick.JoystickInput);
 
-        if( weap == 2 )
+        if ( weap == 2 )
         {
-            Vector2 target2 = new Vector2( x, y );
-            target2 = Quaternion.Euler( 0, 0, 10 ) * target2;
-            GameObject proj2 = Network.Instantiate( proj, shooterPosition, shooter.rotation,1 ) as GameObject;
-            proj2.GetComponent<ProjController>().FireInTheHole( target2 );
+            Vector2 target2 = new Vector2(x, y);
+            target2 = Quaternion.Euler(0, 0, 10) * target2;
+            GameObject proj2 = Network.Instantiate(proj, shooterPosition, shooter.rotation, 1) as GameObject;
+            proj2.GetComponent<ProjController>().FireInTheHole(target2);
 
-            Vector2 target3 = new Vector2( x, y );
-            target3 = Quaternion.Euler( 0, 0, -10 ) * target3;
-            GameObject proj3 = Network.Instantiate( proj, shooterPosition, shooter.rotation,1 ) as GameObject;
-            proj3.GetComponent<ProjController>().FireInTheHole( target3 );
+            Vector2 target3 = new Vector2(x, y);
+            target3 = Quaternion.Euler(0, 0, -10) * target3;
+            GameObject proj3 = Network.Instantiate(proj, shooterPosition, shooter.rotation, 1) as GameObject;
+            proj3.GetComponent<ProjController>().FireInTheHole(target3);
         }
     }
     public int GetWeapon
