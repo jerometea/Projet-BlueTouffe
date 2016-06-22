@@ -35,7 +35,7 @@ public class Weapon : MonoBehaviour
         float x = _Joystick.JoystickInput.x;
         float y = _Joystick.JoystickInput.y;
 
-        if ( gameObject.GetComponent<Animator>().GetBool("isShooting") )
+        if ( gameObject.GetComponent<Animator>().GetBool("isShooting") && !gameObject.GetComponent<CharHealth>().IsDead)
         {
             timeToFire++;
             if ( x != 0 || y != 0 )

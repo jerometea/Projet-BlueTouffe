@@ -23,7 +23,6 @@ public class ZombieSpawner : ITickable {
             while ( _zombieList.Count < 50 )
             {
                 _zombieList.Add((GameObject)Network.Instantiate(_zombiePrefab, RandomPosition(), _zombiePrefab.transform.rotation, 1));
-                Debug.Log(_zombieList.Count);
             }
         }
     }

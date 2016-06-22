@@ -137,13 +137,11 @@ public class CharController : MonoBehaviour
         if ( y > 0 )
         {
             transform.Translate(0, (y * Time.deltaTime), 0);
-            Debug.Log("y : " + y);
         }
         else if ( y < 0 )
         {
             transform.Translate(0, (y * Time.deltaTime), 0);
 
-            Debug.Log(y);
 
         }
 
@@ -152,7 +150,6 @@ public class CharController : MonoBehaviour
             transform.Translate(-x * Time.deltaTime, 0, 0);
 
             transform.eulerAngles = new Vector2(0, 180);
-            Debug.Log("x : " + x);
 
         }
         else if ( x < 0 )
@@ -160,7 +157,6 @@ public class CharController : MonoBehaviour
             transform.Translate(x * Time.deltaTime, 0, 0);
 
             transform.eulerAngles = new Vector2(0, 0);
-            Debug.Log("x : " + x);
 
         }
 
@@ -172,7 +168,6 @@ public class CharController : MonoBehaviour
         _anim.SetBool("isShooting", false);
         if ( _friend != null )
         {
-            Debug.Log("plop");
 
             //if(!_friend.GetComponent<CharHealth>().IsDead)
             if ( _friend.GetComponent<Animator>().GetBool("isDead") )

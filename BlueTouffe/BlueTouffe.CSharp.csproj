@@ -63,11 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Char from Léo\Hero.cs" />
     <Compile Include="Assets\Char\CharController.cs" />
     <Compile Include="Assets\End.cs" />
     <Compile Include="Assets\IsoMovement.cs" />
-    <Compile Include="Assets\Mobs\HealthEnemy.cs" />
-    <Compile Include="Assets\Mobs\Zombie.cs" />
+    <Compile Include="Assets\Mobs from Léo\HealthEnemy.cs" />
+    <Compile Include="Assets\Mobs from Léo\MobsController.cs" />
+    <Compile Include="Assets\Mobs from Léo\Zombie.cs" />
     <Compile Include="Assets\Modules\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothDemoGuiBase.cs" />
     <Compile Include="Assets\Modules\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothDemoMenu.cs" />
     <Compile Include="Assets\Modules\AndroidBluetoothMultiplayer\Demos\Assets\Scripts\BluetoothDiscoveryDemoGui.cs" />
@@ -282,7 +284,6 @@
     <Compile Include="Assets\RPB.cs" />
     <Compile Include="Assets\Scripts\BlueTouffeInstaller.cs" />
     <Compile Include="Assets\Scripts\ClickOnGo.cs" />
-    <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\Menu\Bluetooth.cs" />
     <Compile Include="Assets\Scripts\Menu\EcranAccueil.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
