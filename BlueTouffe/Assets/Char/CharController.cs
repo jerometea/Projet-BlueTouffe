@@ -35,7 +35,8 @@ public class CharController : MonoBehaviour
 
     NetworkView _network;
 
-    Button _buttonRez;
+    GameObject _buttonRez;
+    SavingButton _savingButton;
     // Use this for initialization
     void Start()
     {
@@ -49,7 +50,8 @@ public class CharController : MonoBehaviour
         _JoystickRight = _joyRightGameObj.GetComponent<Joystick>();
 
         _network = GetComponent<NetworkView>();
-
+        _buttonRez = GameObject.Find("Button rez");
+        _savingButton = _buttonRez.GetComponent<SavingButton>();
     }
 
     // Update is called once per frame
@@ -63,7 +65,7 @@ public class CharController : MonoBehaviour
                 _shootY = _JoystickRight.JoystickInput.y;
                 _shootX = _JoystickRight.JoystickInput.x;
 
-                if ( _isSaving )
+                if ( _savingButton._saving == true )
                 {
                     Ressurection();
                 }
