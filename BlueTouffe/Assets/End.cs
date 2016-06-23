@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using IsoTools;
 
 public class End : MonoBehaviour {
 
     public List<GameObject> PlayersInEnd = new List<GameObject>();
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -17,23 +18,25 @@ public class End : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter(Collider col)
+    void OnIsoTriggerEnter(IsoCollider col)
     {
-        if(col.gameObject.tag == "Char")
+        if (col.gameObject.name == "Char")
         {
             PlayersInEnd.Add(col.gameObject);
+            Debug.Log("enter");
         }
-        foreach(GameObject g in PlayersInEnd)
+        foreach (GameObject g in PlayersInEnd)
         {
-            Debug.Log("coucou");
+            Debug.Log(g);
         }
     }
 
-    void OnTriggerExit(Collider col)
+    void OnIsoTriggerExit(IsoCollider col)
     {
-        if (col.gameObject.tag == "Char")
+        if (col.gameObject.name == "Char")
         {
             PlayersInEnd.Remove(col.gameObject);
+            Debug.Log("exit");
         }
         foreach (GameObject g in PlayersInEnd)
         {

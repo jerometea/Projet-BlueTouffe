@@ -21,6 +21,7 @@ public class BlueTouffeInstaller : MonoInstaller {
         Container.Bind<GameObject>("Moutains").ToInstance(_settings.Map.Moutains);
         Container.Bind<GameObject>("Character").ToInstance(_settings.Character.Character);
         Container.Bind<GameObject>("Controls").ToInstance(_settings.ControlJoystick.Joystick);
+        Container.Bind<GameObject>("EndTrigger").ToInstance(_settings.Map.EndTrigger);
 
 
         Container.Bind<GameObject>("Zombie").ToInstance(_settings.Zombie.Zombie);
@@ -48,6 +49,7 @@ public class BlueTouffeInstaller : MonoInstaller {
             public GameObject Buildings;
             public GameObject FullFloor;
             public GameObject Moutains;
+            public GameObject EndTrigger;
         }
 
         [Serializable]
