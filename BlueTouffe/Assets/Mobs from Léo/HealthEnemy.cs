@@ -50,4 +50,25 @@ public class HealthEnemy : MonoBehaviour {
     {
         get { return isDead; }
     }
+
+    void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
+    {
+        
+        if (stream.isWriting)
+        {
+            var health = Health;
+            var dead = isDead;
+            stream.Serialize(ref health);
+            stream.Serialize(ref dead);
+        }
+        else
+        {
+            var health = Health;
+            var dead = isDead;
+            stream.Serialize(ref health);
+            stream.Serialize(ref dead);
+            Health = health;
+            isDead = dead;
+        }
+    }
 }

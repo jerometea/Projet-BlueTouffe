@@ -66,6 +66,7 @@
     <Compile Include="Assets\Char from Léo\Hero.cs" />
     <Compile Include="Assets\Char\CharController.cs" />
     <Compile Include="Assets\End.cs" />
+    <Compile Include="Assets\HelpingButton.cs" />
     <Compile Include="Assets\IsoMovement.cs" />
     <Compile Include="Assets\Mobs from Léo\HealthEnemy.cs" />
     <Compile Include="Assets\Mobs from Léo\MobsController.cs" />
@@ -281,6 +282,7 @@
     <Compile Include="Assets\Modules\Zenject\Source\Util\SceneDecoratorCompositionRoot.cs" />
     <Compile Include="Assets\Modules\Zenject\Source\Util\UnityUtil.cs" />
     <Compile Include="Assets\Modules\Zenject\Source\Util\ZenjectAutoBinding.cs" />
+    <Compile Include="Assets\Pointer.cs" />
     <Compile Include="Assets\RPB.cs" />
     <Compile Include="Assets\Scripts\BlueTouffeInstaller.cs" />
     <Compile Include="Assets\Scripts\ClickOnGo.cs" />

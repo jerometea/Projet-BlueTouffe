@@ -8,6 +8,7 @@ public class CharHealth : MonoBehaviour {
     public CircleCollider2D collider;
     int i;
     bool _isAttacked;
+    public NetworkView nv;
 
     void ChangeColor(Color color)
     {
@@ -39,6 +40,16 @@ public class CharHealth : MonoBehaviour {
             }
             i++;
         }
+
+        if (nv.isMine)
+        nv.RPC("SyncroHealth", RPCMode.All, _health, _playerDead);
+    }
+
+    [RPC]
+    void SyncroHealth(float health, bool isDead)
+    {
+        _health = health;
+        _playerDead = isDead;
     }
 
     void PlayerDead()
@@ -67,9 +78,34 @@ public class CharHealth : MonoBehaviour {
 
     public void PlayerRez()
     {
+        gameObject.layer = 9;
         _playerDead = false;
         _health = 100;
         _anim.SetBool( "isDead", _playerDead );
         collider.enabled = true;
+        Debug.Log("Player dead : " + _playerDead);
+        Debug.Log("Healt : " + _health);
+        Debug.Log("Name : " + name);
+        Debug.Log("Rez methode end");
+    }
+
+    void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            var health = _health;
+            var dead = _playerDead;
+            stream.Serialize(ref health);
+            stream.Serialize(ref dead);
+        }
+        else
+        {
+            var health = _health;
+            var dead = _playerDead;
+            stream.Serialize(ref health);
+            stream.Serialize(ref dead);
+            _health = health;
+            _playerDead = dead;
+        }
     }
 }

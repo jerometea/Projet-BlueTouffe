@@ -35,7 +35,9 @@ public class CharController : MonoBehaviour
 
     NetworkView _network;
 
-    Button _buttonRez;
+    GameObject _buttonRez;
+    HelpingButton _helpingButton;
+
     // Use this for initialization
     void Start()
     {
@@ -50,6 +52,9 @@ public class CharController : MonoBehaviour
 
         _network = GetComponent<NetworkView>();
 
+        _buttonRez = GameObject.Find("Rez button");
+        _helpingButton = _buttonRez.GetComponent<HelpingButton>();
+
     }
 
     // Update is called once per frame
@@ -63,7 +68,7 @@ public class CharController : MonoBehaviour
                 _shootY = _JoystickRight.JoystickInput.y;
                 _shootX = _JoystickRight.JoystickInput.x;
 
-                if ( _isSaving )
+                if ( _helpingButton._saving == true )
                 {
                     Ressurection();
                 }
@@ -163,6 +168,12 @@ public class CharController : MonoBehaviour
         _cam.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
     }
 
+    [RPC]
+    void Rez ()
+    {
+        Debug.Log("Rez : ");
+        GetComponent<CharHealth>().PlayerRez();
+    }
     void Ressurection()
     {
         _anim.SetBool("isShooting", false);
@@ -183,6 +194,7 @@ public class CharController : MonoBehaviour
                 if ( TimeRez == NeededTimeRez )
                 {
                     _friend.GetComponent<CharHealth>().PlayerRez();
+                    _friend.GetComponent<NetworkView>().RPC("Rez", RPCMode.All);
                 }
             }
         }

@@ -41,7 +41,7 @@ public class Zombie : MonoBehaviour
             anime.SetBool("IsAttacking", true);
             if (i > 29 && i < 31 && !gameObject.GetComponent<HealthEnemy>().IsDead)
             {
-                HeroToAttack.GetComponent<CharHealth>().TakeDamage(10);
+                HeroToAttack.GetComponent<CharHealth>().TakeDamage(50);
                 
             }
             if (i > 35 && i < 36)
