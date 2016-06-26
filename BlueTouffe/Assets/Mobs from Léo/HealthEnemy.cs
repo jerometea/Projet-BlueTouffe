@@ -7,36 +7,44 @@ public class HealthEnemy : MonoBehaviour {
     int Health;
     bool isDead;
     Animator anim;
-    
+    public NetworkView _networView;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         Health = MaxHealth;
         anim = GetComponent< Animator > ();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
-	}
+        if(!isDead)
+            _networView.RPC("SyncroHealthEnnemy", RPCMode.All, Health, isDead);
+
+
+    }
 
     public void ReceiveDamage(int damage)
     {
         if(isDead)
         {
-            Dead();
+            _networView.RPC("Dead", RPCMode.All);
+
         }
         else if(Health <= 0 || Health - damage <= 0 )
         {
-            Dead();
+            _networView.RPC("Dead", RPCMode.All);
+
         }
         else
         {
             Health = Health - damage;
         }
+        Debug.Log("health : " + Health + " is dead : " + isDead);
 
     }
 
+    [RPC]
     void Dead()
     {
         isDead = true;
@@ -51,24 +59,32 @@ public class HealthEnemy : MonoBehaviour {
         get { return isDead; }
     }
 
-    void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
+    //void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
+    //{
+
+    //    if (stream.isWriting)
+    //    {
+    //        var health = Health;
+    //        var dead = isDead;
+    //        stream.Serialize(ref health);
+    //        stream.Serialize(ref dead);
+    //    }
+    //    else
+    //    {
+    //        var health = Health;
+    //        var dead = isDead;
+    //        stream.Serialize(ref health);
+    //        stream.Serialize(ref dead);
+    //        Health = health;
+    //        isDead = dead;
+    //    }
+    //}
+
+    [RPC]
+    void SyncroHealthEnnemy( int healthEnnemy, bool IsEnnemyDead )
     {
-        
-        if (stream.isWriting)
-        {
-            var health = Health;
-            var dead = isDead;
-            stream.Serialize(ref health);
-            stream.Serialize(ref dead);
-        }
-        else
-        {
-            var health = Health;
-            var dead = isDead;
-            stream.Serialize(ref health);
-            stream.Serialize(ref dead);
-            Health = health;
-            isDead = dead;
-        }
+        Health = healthEnnemy;
+        isDead = IsEnnemyDead;
     }
+
 }

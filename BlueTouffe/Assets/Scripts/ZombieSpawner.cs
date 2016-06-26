@@ -18,13 +18,11 @@ public class ZombieSpawner : ITickable {
 
     public void Start()
     {
-        if ( _zombieList.Count < 50 )
-        {
-            while ( _zombieList.Count < 50 )
+            while ( _zombieList.Count < 100 )
             {
                 _zombieList.Add((GameObject)Network.Instantiate(_zombiePrefab, RandomPosition(), _zombiePrefab.transform.rotation, 1));
             }
-        }
+        
     }
 
     public void Tick()
