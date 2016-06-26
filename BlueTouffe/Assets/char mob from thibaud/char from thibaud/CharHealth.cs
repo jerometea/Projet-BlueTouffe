@@ -24,7 +24,7 @@ public class CharHealth : MonoBehaviour {
     void Update() {
         if (_health <= 0 && !_playerDead)
         {
-            PlayerDead();
+            nv.RPC("PlayerDead", RPCMode.All);
         }
         if (_isAttacked)
         {
@@ -52,6 +52,7 @@ public class CharHealth : MonoBehaviour {
         _playerDead = isDead;
     }
 
+    [RPC]
     void PlayerDead()
     {
         // The player is now dead.
