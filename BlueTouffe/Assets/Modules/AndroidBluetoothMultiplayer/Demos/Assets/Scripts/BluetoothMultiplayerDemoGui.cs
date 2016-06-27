@@ -19,6 +19,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     GameObject _buildings;
     GameObject _fullFloor;
     GameObject _moutains;
+    GameObject _endTrigger;
 
     [PostInject]
     public void Construct(
@@ -26,7 +27,8 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         [Inject("Buttons")] GameObject Buttons,
         [Inject("Controls")] GameObject joystick,
         [Inject("Character")] GameObject character,
-        [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, [Inject("Moutains")] GameObject moutains)
+        [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, 
+        [Inject("Moutains")] GameObject moutains, [Inject("EndTrigger")] GameObject EndTrigger )
     {
         _buttons = Buttons;
         _zombieSpawner = zombieSpawner;
@@ -35,6 +37,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         _buildings = buildings;
         _fullFloor = fullFloor;
         _moutains = moutains;
+        _endTrigger = EndTrigger;
     }
 
     public GameObject playerDisplay;
@@ -329,6 +332,8 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         if ( _fullFloor == null ) Debug.Log("floor null");
         Instantiate(_fullFloor);
 
+        if ( _endTrigger == null ) Debug.Log("end trigger null");
+        Instantiate(_endTrigger);
         //if ( _moutains == null ) Debug.Log("moutains null");
         //Instantiate(_moutains);
 

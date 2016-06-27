@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -65,8 +71,6 @@
   <ItemGroup>
     <Compile Include="Assets\Char from Léo\Hero.cs" />
     <Compile Include="Assets\Char\CharController.cs" />
-    <Compile Include="Assets\End.cs" />
-    <Compile Include="Assets\HelpingButton.cs" />
     <Compile Include="Assets\IsoMovement.cs" />
     <Compile Include="Assets\Mobs from Léo\HealthEnemy.cs" />
     <Compile Include="Assets\Mobs from Léo\MobsController.cs" />
@@ -286,6 +290,8 @@
     <Compile Include="Assets\RPB.cs" />
     <Compile Include="Assets\Scripts\BlueTouffeInstaller.cs" />
     <Compile Include="Assets\Scripts\ClickOnGo.cs" />
+    <Compile Include="Assets\Scripts\End.cs" />
+    <Compile Include="Assets\Scripts\HelpingButton.cs" />
     <Compile Include="Assets\Scripts\Menu\Bluetooth.cs" />
     <Compile Include="Assets\Scripts\Menu\EcranAccueil.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
