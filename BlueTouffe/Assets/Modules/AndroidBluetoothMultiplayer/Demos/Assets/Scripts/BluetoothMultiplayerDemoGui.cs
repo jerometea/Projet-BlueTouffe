@@ -334,8 +334,8 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
         if ( _endTrigger == null ) Debug.Log("end trigger null");
         Instantiate(_endTrigger);
-        //if ( _moutains == null ) Debug.Log("moutains null");
-        //Instantiate(_moutains);
+        if (_moutains == null) Debug.Log("moutains null");
+        Instantiate(_moutains);
 
         if ( _character == null ) Debug.Log("character null");
         Network.Instantiate(_character, _character.transform.position, _character.transform.rotation, 0);

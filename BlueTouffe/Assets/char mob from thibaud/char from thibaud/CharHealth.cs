@@ -85,7 +85,7 @@ public class CharHealth : MonoBehaviour {
         _anim.SetBool( "isDead", _playerDead );
         collider.enabled = true;
         Debug.Log("Player dead : " + _playerDead);
-        Debug.Log("Healt : " + _health);
+        Debug.Log("Health : " + _health);
         Debug.Log("Name : " + name);
         Debug.Log("Rez methode end");
     }

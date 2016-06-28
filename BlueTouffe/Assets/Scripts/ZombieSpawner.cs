@@ -18,7 +18,7 @@ public class ZombieSpawner : ITickable {
 
     public void Start()
     {
-            while ( _zombieList.Count < 100 )
+            while ( _zombieList.Count < 200 )
             {
                 _zombieList.Add((GameObject)Network.Instantiate(_zombiePrefab, RandomPosition(), _zombiePrefab.transform.rotation, 1));
             }
@@ -32,6 +32,6 @@ public class ZombieSpawner : ITickable {
 
     Vector2 RandomPosition()
     {
-        return new Vector3(UnityEngine.Random.Range(-1080, 2152), UnityEngine.Random.Range(-1293, 516));
+        return new Vector3(UnityEngine.Random.Range(-2074, 62), UnityEngine.Random.Range(771, -380));
     }
 }

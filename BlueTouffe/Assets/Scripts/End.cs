@@ -8,6 +8,7 @@ public class End : MonoBehaviour {
 
     GameObject[] _players;
     public List<GameObject> PlayersInEnd = new List<GameObject>();
+    public List<GameObject> PlayersDead = new List<GameObject>();
 
 
     // Use this for initialization
@@ -18,12 +19,26 @@ public class End : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         _players = GameObject.FindGameObjectsWithTag("Player");
-        Debug.Log("Nb of players :" + _players.Length + " | Nb of players in End:" + PlayersInEnd.Count);
-        if (PlayersInEnd.Count >= _players.Length)
+        for(int i = 0; i<_players.Length; i++)
         {
-            Debug.Log("Fin du jeu");
-            SceneManager.LoadScene("EndMenu");
+            if (!_players[i].GetComponent<CharHealth>().IsDead && PlayersInEnd.Count >= _players.Length)
+            {
+                Debug.Log("Fin du jeu");
+                SceneManager.LoadScene("EndMenuWin");
+            }
         }
+        for(int i=0;i<_players.Length; i++)
+        {
+            if (!_players[i].GetComponent<CharHealth>().IsDead)
+            {
+                break;
+            }
+            if (i == _players.Length - 1)
+            {
+                SceneManager.LoadScene("EndMenuLoose");
+            }
+        }
+            Debug.Log("Nb of players :" + _players.Length + " | Nb of players in End:" + PlayersInEnd.Count);
 	}
 
     void OnIsoTriggerEnter(IsoCollider col)
