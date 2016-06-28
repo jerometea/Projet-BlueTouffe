@@ -24,6 +24,7 @@ public class End : MonoBehaviour {
             if (!_players[i].GetComponent<CharHealth>().IsDead && PlayersInEnd.Count >= _players.Length)
             {
                 Debug.Log("Fin du jeu");
+                Network.Disconnect();
                 SceneManager.LoadScene("EndMenuWin");
             }
         }
@@ -35,6 +36,7 @@ public class End : MonoBehaviour {
             }
             if (i == _players.Length - 1)
             {
+                Network.Disconnect();
                 SceneManager.LoadScene("EndMenuLoose");
             }
         }
