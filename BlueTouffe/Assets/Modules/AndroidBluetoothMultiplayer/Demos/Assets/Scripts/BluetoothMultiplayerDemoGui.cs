@@ -6,9 +6,11 @@ using UnityEngine.Networking;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using Zenject;
+using UnityEngine.SceneManagement;
 
 public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 {
+    GameObject _menuInGame;
     GameObject _buttons;
     ZombieSpawner _zombieSpawner;
 
@@ -20,14 +22,18 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     GameObject _fullFloor;
     GameObject _moutains;
 
+    public Camera _camera;
+
     [PostInject]
     public void Construct(
         ZombieSpawner zombieSpawner,
+        [Inject("GameMenu")] GameObject MenuInGame,
         [Inject("Buttons")] GameObject Buttons,
         [Inject("Controls")] GameObject joystick,
         [Inject("Character")] GameObject character,
         [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor, [Inject("Moutains")] GameObject moutains)
     {
+        _menuInGame = MenuInGame;
         _buttons = Buttons;
         _zombieSpawner = zombieSpawner;
         _joystick = joystick;
@@ -302,7 +308,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
         // Stopping all Bluetooth connectivity on Unity networking disconnect event
         AndroidBluetoothMultiplayer.Stop();
-        DestroyGameObjects();
+        SceneManager.LoadScene(0);
     }
 
     private void OnConnectedToServer()
@@ -316,12 +322,19 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     [RPC]
     public void InstantiateCharacter()
     {
+        GameObject menu;
+        GameObject joystick;
+        GameObject button;
+        GameObject chara;
 
-        if (_buttons == null) Debug.Log("help button null");
-        Instantiate(_buttons);
+        if (_menuInGame == null) Debug.Log("menu in game null");
+        menu = Instantiate(_menuInGame);
+
+        //if (_buttons == null) Debug.Log("help button null");
+        //button = Instantiate(_buttons);
 
         if (_joystick == null) Debug.Log("joystick null");
-        Instantiate(_joystick);
+        joystick = Instantiate(_joystick);
         
         if ( _buildings == null ) Debug.Log("building null");
         Instantiate(_buildings);
@@ -331,9 +344,14 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
         //if ( _moutains == null ) Debug.Log("moutains null");
         //Instantiate(_moutains);
+        menu.GetComponent<Script>().scriptButton.GetComponent<MenuScript>()._joystick = joystick;
+        //menu.GetComponent<Script>().scriptButton.GetComponent<MenuScript>()._button = button;
+        menu.GetComponent<Canvas>().worldCamera = _camera;
+
 
         if ( _character == null ) Debug.Log("character null");
-        Network.Instantiate(_character, _character.transform.position, _character.transform.rotation, 0);
+        chara = Network.Instantiate(_character, _character.transform.position, _character.transform.rotation, 0) as GameObject;
+        menu.GetComponent<Script>().scriptButton.GetComponent<MenuScript>()._chara = chara;
 
         if ( Network.isServer )
         {

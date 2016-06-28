@@ -59,7 +59,7 @@ public class CharHealth : MonoBehaviour {
         _playerDead = true;
 
         collider.enabled = false;
-        gameObject.layer = 0;
+        gameObject.layer = 10;
         // Set the animator's dead parameter to true also.
         _anim.SetBool( "isDead", _playerDead );
     }

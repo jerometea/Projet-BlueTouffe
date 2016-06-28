@@ -8,12 +8,10 @@ public class HelpingButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerDown(PointerEventData eventData)
     {
         _saving = true;
-        Debug.Log(_saving);
     }
     public void OnPointerUp(PointerEventData eventData)
     {
         _saving = false;
-        Debug.Log(_saving);
     }
     // Use this for initialization
     void Start()

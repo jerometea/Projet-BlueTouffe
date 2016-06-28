@@ -283,7 +283,10 @@
     <Compile Include="Assets\Modules\Zenject\Source\Util\UnityUtil.cs" />
     <Compile Include="Assets\Modules\Zenject\Source\Util\ZenjectAutoBinding.cs" />
     <Compile Include="Assets\Pointer.cs" />
+    <Compile Include="Assets\Prefabs\Menu\GameMenu\MenuScript.cs" />
+    <Compile Include="Assets\Prefabs\Menu\GameMenu\Script.cs" />
     <Compile Include="Assets\RPB.cs" />
+    <Compile Include="Assets\RezButtonScript.cs" />
     <Compile Include="Assets\Scripts\BlueTouffeInstaller.cs" />
     <Compile Include="Assets\Scripts\ClickOnGo.cs" />
     <Compile Include="Assets\Scripts\Menu\Bluetooth.cs" />
