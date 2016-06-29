@@ -348,8 +348,8 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         if ( _fullFloor == null ) Debug.Log("floor null");
         Instantiate(_fullFloor);
 
-        //if ( _moutains == null ) Debug.Log("moutains null");
-        //Instantiate(_moutains);
+        if ( _moutains == null ) Debug.Log("moutains null");
+        Instantiate(_moutains);
         menu.GetComponent<Script>().scriptButton.GetComponent<MenuScript>()._joystick = joystick;
         //menu.GetComponent<Script>().scriptButton.GetComponent<MenuScript>()._button = button;
         menu.GetComponent<Canvas>().worldCamera = _camera;

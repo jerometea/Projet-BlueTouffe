@@ -32,6 +32,6 @@ public class ZombieSpawner : ITickable {
 
     Vector2 RandomPosition()
     {
-        return new Vector3(UnityEngine.Random.Range(-2074, 62), UnityEngine.Random.Range(771, -380));
+        return new Vector3(UnityEngine.Random.Range(-1635, 2174), UnityEngine.Random.Range(675, -860));
     }
 }
