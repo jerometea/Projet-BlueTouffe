@@ -14,7 +14,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     GameObject _buttons;
     ZombieSpawner _zombieSpawner;
 
-    GameObject _zombie;
+    GameObject _zombies;
     GameObject _joystick;
     GameObject _character;
 
@@ -28,6 +28,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
     [PostInject]
     public void Construct(
         ZombieSpawner zombieSpawner,
+        [Inject("Zombie")] GameObject Zombies,
         [Inject("GameMenu")] GameObject MenuInGame,
         [Inject("Buttons")] GameObject Buttons,
         [Inject("Controls")] GameObject joystick,
@@ -35,6 +36,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         [Inject("Buildings")] GameObject buildings, [Inject("FullFloor")] GameObject fullFloor,
         [Inject("Moutains")] GameObject moutains, [Inject("EndTrigger")] GameObject EndTrigger)
     {
+        _zombies = Zombies;
         _menuInGame = MenuInGame;
         _buttons = Buttons;
         _zombieSpawner = zombieSpawner;
@@ -329,7 +331,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
         GameObject joystick;
         GameObject button;
         GameObject chara;
-
+        _camera.GetComponent<Camera>().orthographicSize = 100;
         if (_menuInGame == null) Debug.Log("menu in game null");
         menu = Instantiate(_menuInGame);
 
@@ -361,7 +363,7 @@ public class BluetoothMultiplayerDemoGui : BluetoothDemoGuiBase
 
         if ( Network.isServer )
         {
-            _zombieSpawner.Start();
+            Network.Instantiate(_zombies, _zombies.transform.position, _zombies.transform.rotation, 0);
         }
     }
 

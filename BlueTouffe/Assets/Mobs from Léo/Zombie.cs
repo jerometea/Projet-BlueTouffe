@@ -9,7 +9,7 @@ public class Zombie : MonoBehaviour
     public GameObject HeroToAttack;
     public Collider2D HeroCollider;
     public CircleCollider2D TriggerAttack;
-    public int speed = 10;
+    public float speed = 10;
     public Vector3 direction;
     public Vector3 dir;
 
@@ -64,7 +64,7 @@ public class Zombie : MonoBehaviour
             Vector3 ht = Hero.transform.position;
             Vector3 t = transform.position;
 
-            direction = (ht - t) / ((int)(Math.Sqrt((ht.y - t.y) * (ht.y - t.y) + (ht.x - t.x) * (ht.x - t.x)) * speed));
+            direction = (ht - t) / ((float)(Math.Sqrt((ht.y - t.y) * (ht.y - t.y) + (ht.x - t.x) * (ht.x - t.x)) * speed));
             dir = (ht - t) / ((int)(Math.Sqrt((ht.y - t.y) * (ht.y - t.y) + (ht.x - t.x) * (ht.x - t.x))));
 
             if (x > 0)
